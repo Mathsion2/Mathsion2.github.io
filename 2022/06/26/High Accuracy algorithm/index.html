@@ -20,30 +20,37 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="坚持为美好的东西而努力，不为失败或得不到而焦虑。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mathsion">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="高精度算法 文章已发布在：高精度算法 (qq.com)   💡 *注：为了方便节省时间，该篇内容中的输入输出都使用的是C++的输入方法，需要引用头文件，并且使用命名空间：using namespace std;*    一、高精度数1.定义在 32 位计算机上，有符号整数(int)的取值范围是-2147483648 至+2147483647，无符 号整数(unsigned int)的取值范围是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="High Accuracy algorithm">
+<meta property="og:url" content="http://example.com/2022/06/26/High%20Accuracy%20algorithm/index.html">
 <meta property="og:site_name" content="Mathsion">
-<meta property="og:description" content="坚持为美好的东西而努力，不为失败或得不到而焦虑。">
+<meta property="og:description" content="高精度算法 文章已发布在：高精度算法 (qq.com)   💡 *注：为了方便节省时间，该篇内容中的输入输出都使用的是C++的输入方法，需要引用头文件，并且使用命名空间：using namespace std;*    一、高精度数1.定义在 32 位计算机上，有符号整数(int)的取值范围是-2147483648 至+2147483647，无符 号整数(unsigned int)的取值范围是">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2022/06/26/High%20Accuracy%20algorithm/%E9%AB%98%E7%B2%BE%E5%BA%A6%E7%AE%97%E6%B3%95%201202eb875e674384b2f6adbc3955aaae/Untitled.png">
+<meta property="og:image" content="http://example.com/2022/06/26/High%20Accuracy%20algorithm/%E9%AB%98%E7%B2%BE%E5%BA%A6%E7%AE%97%E6%B3%95%201202eb875e674384b2f6adbc3955aaae/Untitled%201.png">
+<meta property="article:published_time" content="2022-06-26T11:36:17.000Z">
+<meta property="article:modified_time" content="2022-06-26T16:06:10.948Z">
 <meta property="article:author" content="Wong Mathsion">
+<meta property="article:tag" content="Algorithm">
+<meta property="article:tag" content="Computer science">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/06/26/High%20Accuracy%20algorithm/%E9%AB%98%E7%B2%BE%E5%BA%A6%E7%AE%97%E6%B3%95%201202eb875e674384b2f6adbc3955aaae/Untitled.png">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2022/06/26/High%20Accuracy%20algorithm/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Mathsion</title>
+  <title>High Accuracy algorithm | Mathsion</title>
   
 
 
@@ -175,229 +182,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/26/Recurrent%20algorithm's%20application%EF%BC%9Agcd/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Mathsion.jpg">
-      <meta itemprop="name" content="Wong Mathsion">
-      <meta itemprop="description" content="坚持为美好的东西而努力，不为失败或得不到而焦虑。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mathsion">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/06/26/Recurrent%20algorithm's%20application%EF%BC%9Agcd/" class="post-title-link" itemprop="url">Recurrent algorithm's application：gcd</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-06-26 19:36:17 / 修改时间：23:56:30" itemprop="dateCreated datePublished" datetime="2022-06-26T19:36:17+08:00">2022-06-26</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Study/" itemprop="url" rel="index"><span itemprop="name">Study</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Study/Computer-science/" itemprop="url" rel="index"><span itemprop="name">Computer science</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2022/06/26/Recurrent%20algorithm's%20application%EF%BC%9Agcd/" class="post-meta-item leancloud_visitors" data-flag-title="Recurrent algorithm's application：gcd" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2022/06/26/Recurrent%20algorithm's%20application%EF%BC%9Agcd/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/06/26/Recurrent%20algorithm's%20application%EF%BC%9Agcd/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="递归应用：求两个数互质（求最大公约数）"><a href="#递归应用：求两个数互质（求最大公约数）" class="headerlink" title="递归应用：求两个数互质（求最大公约数）"></a>递归应用：求两个数互质（求最大公约数）</h1><p><font color="purple" size=3>来源：Mathsion</font></p>
-<blockquote>
-<p>文章已发布在：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/jo2oLhv8n4TISrqopFOfNA">求两个数互质（求两个数的最大公约数）</a></p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/06/26/Recurrent%20algorithm's%20application%EF%BC%9Agcd/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-<div>
-    
- </div>
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/26/Sorting%20algorithm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Mathsion.jpg">
-      <meta itemprop="name" content="Wong Mathsion">
-      <meta itemprop="description" content="坚持为美好的东西而努力，不为失败或得不到而焦虑。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mathsion">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/06/26/Sorting%20algorithm/" class="post-title-link" itemprop="url">Sorting algorithm</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-06-26 19:36:17" itemprop="dateCreated datePublished" datetime="2022-06-26T19:36:17+08:00">2022-06-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-06-27 00:00:28" itemprop="dateModified" datetime="2022-06-27T00:00:28+08:00">2022-06-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Study/" itemprop="url" rel="index"><span itemprop="name">Study</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Study/Computer-science/" itemprop="url" rel="index"><span itemprop="name">Computer science</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2022/06/26/Sorting%20algorithm/" class="post-meta-item leancloud_visitors" data-flag-title="Sorting algorithm" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2022/06/26/Sorting%20algorithm/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/06/26/Sorting%20algorithm/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="排序算法（一）"><a href="#排序算法（一）" class="headerlink" title="排序算法（一）"></a>排序算法（一）</h1><p><font color="purple" size=3>来源：Mathsion</font></p>
-<blockquote>
-<p>文章已发布在<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/FikRPx6VxKlfg2_LlWtmaA">排序算法（一）</a></p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/06/26/Sorting%20algorithm/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-<div>
-    
- </div>
-
-      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -413,10 +201,9 @@
       <meta itemprop="name" content="Mathsion">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/06/26/High%20Accuracy%20algorithm/" class="post-title-link" itemprop="url">High Accuracy algorithm</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          High Accuracy algorithm
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -481,7 +268,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="高精度算法"><a href="#高精度算法" class="headerlink" title="高精度算法"></a>高精度算法</h1><blockquote>
+        <h1 id="高精度算法"><a href="#高精度算法" class="headerlink" title="高精度算法"></a>高精度算法</h1><blockquote>
 <p>文章已发布在：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/uoGvjZjDQrOdGGs71z501g">高精度算法 (qq.com)</a></p>
 </blockquote>
 <aside>
@@ -557,250 +344,54 @@
 
 <h3 id="（2）高精度除高精度"><a href="#（2）高精度除高精度" class="headerlink" title="（2）高精度除高精度"></a>（2）高精度除高精度</h3><p>有些复杂，先放一放，稍后补充</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-<div>
-    
- </div>
+          <div class="post-tags">
+              <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+              <a href="/tags/Computer-science/" rel="tag"># Computer science</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/24/Linear-algebra-Note/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Mathsion.jpg">
-      <meta itemprop="name" content="Wong Mathsion">
-      <meta itemprop="description" content="坚持为美好的东西而努力，不为失败或得不到而焦虑。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mathsion">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/06/24/Linear-algebra-Note/" class="post-title-link" itemprop="url">Linear algebra Note</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-06-24 19:36:17" itemprop="dateCreated datePublished" datetime="2022-06-24T19:36:17+08:00">2022-06-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-06-26 23:01:22" itemprop="dateModified" datetime="2022-06-26T23:01:22+08:00">2022-06-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Study/" itemprop="url" rel="index"><span itemprop="name">Study</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Study/Math/" itemprop="url" rel="index"><span itemprop="name">Math</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2022/06/24/Linear-algebra-Note/" class="post-meta-item leancloud_visitors" data-flag-title="Linear algebra Note" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2022/06/24/Linear-algebra-Note/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/06/24/Linear-algebra-Note/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Linear-algebra-Note"><a href="#Linear-algebra-Note" class="headerlink" title="Linear algebra Note"></a>Linear algebra Note</h1><p><font color="purple" size=3>来源：Mathsion</font></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/06/24/Linear-algebra-Note/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-<div>
-    
- </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/24/Calculus-Note/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Mathsion.jpg">
-      <meta itemprop="name" content="Wong Mathsion">
-      <meta itemprop="description" content="坚持为美好的东西而努力，不为失败或得不到而焦虑。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mathsion">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/06/24/Calculus-Note/" class="post-title-link" itemprop="url">Calculus Note</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-06-24 10:25:31" itemprop="dateCreated datePublished" datetime="2022-06-24T10:25:31+08:00">2022-06-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-06-26 23:01:25" itemprop="dateModified" datetime="2022-06-26T23:01:25+08:00">2022-06-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Study/" itemprop="url" rel="index"><span itemprop="name">Study</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Study/Math/" itemprop="url" rel="index"><span itemprop="name">Math</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2022/06/24/Calculus-Note/" class="post-meta-item leancloud_visitors" data-flag-title="Calculus Note" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2022/06/24/Calculus-Note/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/06/24/Calculus-Note/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Calculus-Note"><a href="#Calculus-Note" class="headerlink" title="Calculus Note"></a>Calculus Note</h1><p><font color="purple" size=3>来源：Mathsion</font></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/06/24/Calculus-Note/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/06/24/Linear-algebra-Note/" rel="prev" title="Linear algebra Note">
+      <i class="fa fa-chevron-left"></i> Linear algebra Note
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/06/26/Sorting%20algorithm/" rel="next" title="Sorting algorithm">
+      Sorting algorithm <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
   
 <div>
     
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------ 本文结束,感谢您的阅读！------</div>
+    
+</div>
+
+    
  </div>
-
-
-  
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -847,6 +438,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%AB%98%E7%B2%BE%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">高精度算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E9%AB%98%E7%B2%BE%E5%BA%A6%E6%95%B0"><span class="nav-number">1.1.</span> <span class="nav-text">一、高精度数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%AD%98%E5%82%A8"><span class="nav-number">1.1.2.</span> <span class="nav-text">2.存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E5%AD%98%E5%82%A8%E5%B7%A5%E5%85%B7"><span class="nav-number">1.1.3.</span> <span class="nav-text">（1）存储工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E5%AD%98%E5%82%A8%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.4.</span> <span class="nav-text">（2）存储方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%AF%B9%E9%AB%98%E7%B2%BE%E5%BA%A6%E6%95%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">1.1.5.</span> <span class="nav-text">3.对高精度数的一些简单的应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E8%8E%B7%E5%8F%96%E6%9F%90%E4%B8%80%E4%BD%8D%E6%95%B0%E5%AD%97"><span class="nav-number">1.1.6.</span> <span class="nav-text">（1）获取某一位数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E6%B1%82%E9%AB%98%E7%B2%BE%E5%BA%A6%E6%95%B0%E7%9A%84%E7%BB%9D%E5%AF%B9%E5%80%BC"><span class="nav-number">1.1.7.</span> <span class="nav-text">（2）求高精度数的绝对值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E9%AB%98%E7%B2%BE%E5%BA%A6%E6%95%B0%E7%9A%84%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97"><span class="nav-number">1.2.</span> <span class="nav-text">二、高精度数的四则运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E9%AB%98%E7%B2%BE%E5%BA%A6%E6%95%B0%E7%9A%84%E5%8A%A0%E6%B3%95"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.高精度数的加法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E6%97%A0%E8%BF%9B%E4%BD%8D%E5%8A%A0%E6%B3%95"><span class="nav-number">1.2.2.</span> <span class="nav-text">（1）无进位加法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E6%9C%89%E8%BF%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E4%B8%94%E4%BD%8D%E6%95%B0%E5%8F%AF%E8%83%BD%E4%B8%8D%E5%90%8C"><span class="nav-number">1.2.3.</span> <span class="nav-text">（2）有进位加法且位数可能不同</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E9%AB%98%E7%B2%BE%E5%BA%A6%E6%95%B0%E7%9A%84%E5%87%8F%E6%B3%95"><span class="nav-number">1.2.4.</span> <span class="nav-text">2.高精度数的减法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E6%97%A0%E5%80%9F%E4%BD%8D%E5%87%8F%E6%B3%95%EF%BC%88%E6%97%A0%E8%AE%BA%E4%BD%8D%E6%95%B0%E6%98%AF%E5%90%A6%E7%9B%B8%E5%90%8C%EF%BC%8C%E5%9B%A0%E4%B8%BA%E5%B7%B2%E7%BB%8F%E5%80%92%E5%BA%8F%E5%AD%98%E5%82%A8%E6%89%80%E4%BB%A5%E5%B9%B6%E6%97%A0%E4%B8%8D%E5%90%8C%EF%BC%89"><span class="nav-number">1.2.5.</span> <span class="nav-text">（1）无借位减法（无论位数是否相同，因为已经倒序存储所以并无不同）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E6%9C%89%E5%80%9F%E4%BD%8D%E5%87%8F%E6%B3%95"><span class="nav-number">1.2.6.</span> <span class="nav-text">（2）有借位减法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%AB%98%E7%B2%BE%E5%BA%A6%E6%95%B0%E7%9A%84%E4%B9%98%E6%B3%95"><span class="nav-number">1.2.7.</span> <span class="nav-text">3.高精度数的乘法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E9%AB%98%E7%B2%BE%E5%BA%A6%E6%95%B0%E7%9A%84%E9%99%A4%E6%B3%95"><span class="nav-number">1.2.8.</span> <span class="nav-text">4.高精度数的除法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E9%AB%98%E7%B2%BE%E5%BA%A6%E9%99%A4%E4%BD%8E%E7%B2%BE%E5%BA%A6"><span class="nav-number">1.2.9.</span> <span class="nav-text">（1）高精度除低精度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E9%AB%98%E7%B2%BE%E5%BA%A6%E9%99%A4%E9%AB%98%E7%B2%BE%E5%BA%A6"><span class="nav-number">1.2.10.</span> <span class="nav-text">（2）高精度除高精度</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

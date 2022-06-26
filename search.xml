@@ -98,7 +98,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">稳定性：</span><br><span class="line">              稳定：若a在b前面，而a=b，排序后a仍在b前面</span><br><span class="line">              不稳定：若a在b前面，而a=b，排序后a不一定在b的前面</span><br><span class="line">复杂度：</span><br><span class="line">              时间复杂度：算法语句的执行次数，用O(?)来表示</span><br><span class="line">              空间复杂度：运行一个程序所需内存的大小</span><br></pre></td></tr></table></figure>
 
 <aside>
-💡  详细了解请见：[算法—时间复杂度_点滴积累-CSDN博客_算法时间复杂度怎么算](https://blog.csdn.net/user11223344abc/article/details/81485842)
+💡  详细了解请见：[算法—时间复杂度](https://blog.csdn.net/user11223344abc/article/details/81485842)
  我之后系统的学习一下之后，自己再写个总结。
 
 </aside>

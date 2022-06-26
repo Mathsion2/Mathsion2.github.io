@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="排序算法（一）来源：Mathsion  文章已发布在排序算法（一）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sorting algorithm">
+<meta property="og:url" content="http://example.com/2022/06/26/Sorting%20algorithm/index.html">
+<meta property="og:site_name" content="Mathsion">
+<meta property="og:description" content="排序算法（一）来源：Mathsion  文章已发布在排序算法（一）">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-06-26T11:36:17.000Z">
+<meta property="article:modified_time" content="2022-06-26T15:56:32.833Z">
+<meta property="article:author" content="Wong Mathsion">
+<meta property="article:tag" content="Algorithm">
+<meta property="article:tag" content="Computer science">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2022/06/26/Sorting%20algorithm/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Sorting algorithm | Mathsion</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Mathsion</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">follow my heart</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>所有博客</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/26/Sorting%20algorithm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Mathsion.jpg">
+      <meta itemprop="name" content="Wong Mathsion">
+      <meta itemprop="description" content="坚持为美好的东西而努力，不为失败或得不到而焦虑。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mathsion">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Sorting algorithm
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-06-26 19:36:17 / 修改时间：23:56:32" itemprop="dateCreated datePublished" datetime="2022-06-26T19:36:17+08:00">2022-06-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Study/" itemprop="url" rel="index"><span itemprop="name">Study</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Study/Computer-science/" itemprop="url" rel="index"><span itemprop="name">Computer science</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2022/06/26/Sorting%20algorithm/" class="post-meta-item leancloud_visitors" data-flag-title="Sorting algorithm" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/06/26/Sorting%20algorithm/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/06/26/Sorting%20algorithm/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="排序算法（一）"><a href="#排序算法（一）" class="headerlink" title="排序算法（一）"></a>排序算法（一）</h1><p><font color="purple" size=3>来源：Mathsion</font></p>
+<blockquote>
+<p>文章已发布在<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/FikRPx6VxKlfg2_LlWtmaA">排序算法（一）</a></p>
+</blockquote>
+<span id="more"></span>
+<aside>
+💡 声明：此文章参考借鉴： [十大经典排序算法（动图演示） - 一像素 - 博客园 (cnblogs.com)](https://www.cnblogs.com/onepixel/p/7674659.html)      用途：本人学习总结，复习并学习较难的排序算法，无商业用途
+
+</aside>
+
+<p>排序算法是一种最为基本的算法，其中有很多种方法，但是每一种方法的时间空间复杂度是不同的，有时候可能需要运行次数少时间快的算法来进行排序。</p>
+<p>下面以难度为划分，分为较易算法和较难算法两部分，其中较易算法包括：<strong>冒泡排序、选择排序、插入排序、计数排序、sort函数法；较难算法包括：快速排序、希尔排序，堆排序，二路归并排序，多路归并排序，桶排序，基数排序</strong>。并且在下面所有的算法中都是要求这列数从小到大排列，从大到小其实是没有本质区别的。</p>
+<p>名词介绍：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">稳定性：</span><br><span class="line">              稳定：若a在b前面，而a=b，排序后a仍在b前面</span><br><span class="line">              不稳定：若a在b前面，而a=b，排序后a不一定在b的前面</span><br><span class="line">复杂度：</span><br><span class="line">              时间复杂度：算法语句的执行次数，用O(?)来表示</span><br><span class="line">              空间复杂度：运行一个程序所需内存的大小</span><br></pre></td></tr></table></figure>
+
+<aside>
+💡  详细了解请见：[算法—时间复杂度_点滴积累-CSDN博客_算法时间复杂度怎么算](https://blog.csdn.net/user11223344abc/article/details/81485842)
+ 我之后系统的学习一下之后，自己再写个总结。
+
+</aside>
+
+<p><strong>一、较易算法</strong></p>
+<p>1.冒泡排序</p>
+<p>（1）基本原理：</p>
+<p>假设该数组共有n个元素（下标从0~n-1）。依次从头到尾遍历数组，比较相邻两个元素的大小，如果第一个小于第二个元素，不进行交换；如果第一个元素大于第二个元素，则交换两元素，始终保持大的元素在后面，则进行n-1次遍历后，最后一个元素（下标n-1）一定是整个数组中最大的数。以此类推，进行第二次遍历，使倒数第二个元素（下标n-2）为剩下元素中最大的数，进行(n-1)+(n-2)+(n-3)+············ ·2+1=n(n+1)/2次即可。因此还需要使用双层循环嵌套来进行实现。</p>
+<p>（2）时间复杂度：O(n^2)     稳定</p>
+<p>（3）代码实现：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 1000</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> num[N]=&#123;&#125;;</span><br><span class="line">  <span class="type">int</span> n=<span class="number">0</span>;</span><br><span class="line">  cin&gt;&gt;n;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">    cin&gt;&gt;num[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//用户给输入数字的数目</span></span><br><span class="line">  <span class="comment">//或者使用字符数组先存储再转化成数字，但是注意空格 </span></span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n<span class="number">-1</span>;i++)&#123;</span><br><span class="line">    <span class="comment">//第一层循环实际控制的是进行遍历的次数  </span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;n<span class="number">-1</span>-i;j++)&#123;</span><br><span class="line">    <span class="comment">//第二层循环实际控制的是每一次遍历的下标</span></span><br><span class="line">    <span class="comment">//减去的i其实是已经排好了的数，不需要再进行判断</span></span><br><span class="line">      <span class="keyword">if</span>(num[j]&gt;num[j+<span class="number">1</span>])&#123;</span><br><span class="line">        <span class="comment">//引入中间变量进行交换</span></span><br><span class="line">        <span class="type">int</span> temp = num[j];</span><br><span class="line">        num[j] = num[j+<span class="number">1</span>];</span><br><span class="line">        num[j+<span class="number">1</span>] = temp;</span><br><span class="line">      &#125; </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//输出排好后的数组</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">    cout&lt;&lt;num[i]&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">  &#125; </span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>选择排序</li>
+</ol>
+<p>（1）基本原理：</p>
+<p>假设需要对n个数进行排序。对数组进行遍历，找到其中的最小值，与第一个元素进行交换（进行了n-1次比较），再从第二个元素开始遍历，找到最小值与第二个元素进行交换（进行n-2次比较），以此类推。总共需要进行(n-1)+(n-2)+(n-3)+··········· · ·2+1=n(n+1)/2次即可。也需要使用双层循环嵌套来实现。</p>
+<p>（2）时间复杂度：O(n^2)  不稳定</p>
+<p>（3）代码实现：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 1000</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> n=<span class="number">0</span>;</span><br><span class="line">  cin&gt;&gt;n;</span><br><span class="line">  <span class="type">int</span> a[N]=&#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">    cin&gt;&gt;a[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="type">int</span> mindex=<span class="number">0</span>; </span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">    <span class="comment">//第一层循环实际控制的是遍历的次数以及对第几个元素后的数组进行遍历</span></span><br><span class="line">    <span class="comment">//对需要遍历的数组的第一个元素的下标进行标记，方便之后的判断</span></span><br><span class="line">    mindex = i;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=i+<span class="number">1</span>;j&lt;n;j++)&#123;</span><br><span class="line">      <span class="comment">//第二层循环实际控制的是对数组进行选择来寻找到最小值的下标 </span></span><br><span class="line">      <span class="keyword">if</span>(a[j]&lt;a[mindex])&#123;</span><br><span class="line">        mindex = j;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="comment">//已经寻找到此轮遍历的最小值，与剩余数组的第一个元素进行交换</span></span><br><span class="line">    <span class="type">int</span> temp = a[i];</span><br><span class="line">    a[i] = a[mindex];</span><br><span class="line">    a[mindex] = temp; </span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">    cout&lt;&lt;a[i]&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3.插入排序</p>
+<p>（1）基本原理：</p>
+<p>假设需要对n个数进行排序。可以将第一个元素视为已经排序，从第二个元素开始，将其与前面已经排序的元素进行比较，直到找到一个数小于该数后将该数放在小数的后面即可。第一次进行1次比较，第二次最多进行2次比较，以此类推，第n个元素最多进行n-1次比较，总共需要进行(n-1)+(n-2)+(n-3)+··········· · ·2+1=n(n+1)/2次即可。也需要使用双层循环嵌套来实现。但是如果该数列已经是排好的数列，那么我们只需要进行n-1次比较即可，时间复杂度会大大减少，但是并不是每一次都会给这么好的数列。</p>
+<p>（2）时间复杂度：O(n^2)  稳定</p>
+<p>（3）代码实现：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 1000</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std; </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> n=<span class="number">0</span>;</span><br><span class="line">  cin&gt;&gt;n;</span><br><span class="line">  <span class="type">int</span> a[N]=&#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">    cin&gt;&gt;a[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//从无序区间开始循环（a[0]默认为有序区间） </span></span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">    <span class="type">int</span> index = i;<span class="comment">//如果下面判断不成立即不需要进行变换 </span></span><br><span class="line">    <span class="comment">//第一层循环标记的就是从无序区间第一个开始的下标。</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;i;j++)&#123;</span><br><span class="line">      <span class="comment">//第二层循环从第一个元素开始到有序区间结束，进行寻找插入的位置</span></span><br><span class="line">      <span class="keyword">if</span>(a[i]&lt;=a[j])&#123;</span><br><span class="line">        <span class="comment">//此时的j则代表插入的位置</span></span><br><span class="line">        index = j;<span class="comment">//记录该位置 </span></span><br><span class="line">        <span class="keyword">break</span>;<span class="comment">//已经找到应该插入的位置，就不需要再进行判断了， </span></span><br><span class="line">      &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//将index位置后的有序区间的元素均往后移一位，会空出index位置，再将满足条件的元素插入</span></span><br><span class="line">    <span class="type">int</span> current = a[i];<span class="comment">//记录满足条件的元素</span></span><br><span class="line">    <span class="comment">//将index及其后到i的元素向后移一位</span></span><br><span class="line">    <span class="keyword">if</span>(index!=i)&#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="type">int</span> k = i;k&gt;index;k--)&#123;</span><br><span class="line">        a[k] = a[k<span class="number">-1</span>];</span><br><span class="line">      &#125; </span><br><span class="line">      <span class="comment">//再将满足条件的元素插入符合的位置 </span></span><br><span class="line">      a[index] = current;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; </span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> m=<span class="number">0</span>;m&lt;n;m++)&#123;</span><br><span class="line">    cout&lt;&lt;a[m]&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>4.计数排序</p>
+<p>（1）基本原理：</p>
+<p>假设共有n个数需要进行排序。该算法的运行次数还是需要依据输入的数据范围，假设范围为0~m。即对输入的n个数进行一次遍历，不断地增加数据对应数组元素的值，该值则代表该数据出现的次数。最后依据该次数来依次输出。输入后进行了n次储存，输入完毕后对计数数组进行遍历，遍历m次，但是只输出n次。</p>
+<p>这种方法原理很简单，但是会浪费空间。</p>
+<p>（2）时间复杂度：O(n+m)  稳定</p>
+<p>（3）代码实现：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 10000</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> n=<span class="number">0</span>,m=<span class="number">0</span>;<span class="comment">//n代表输入数据的个数，m代表数据范围的最大值 </span></span><br><span class="line">  cin&gt;&gt;m&gt;&gt;n;</span><br><span class="line">  <span class="type">int</span> num[N]=&#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">    <span class="type">int</span> index = <span class="number">0</span>;</span><br><span class="line">    cin&gt;&gt;index;</span><br><span class="line">    num[index]++;</span><br><span class="line">  &#125; </span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">    <span class="keyword">while</span>(num[i]!=<span class="number">0</span>)&#123;</span><br><span class="line">      cout&lt;&lt;i&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">      num[i]--;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>5.sort函数法</p>
+<p>（1）基本原理：</p>
+<p>C++标准库中为我们提供了sort函数，可以对数组进行排序。注意，C中并没有此函数，需要自己按其他方法来写。sort函数使用前需要引用<algorithm>头文件才可以使用。</p>
+<p>（2）基本使用方法：</p>
+<p>**sort(start,end,cmp);**start是被排序数组的起始地址，可以用数组名来代替，此时的地址指在数组的第一个元素，也即下标0的位置；若不希望从第一个元素开始排序，则可以使用指针的加法，即数组名+数字(即希望开始的下标)。end是被排序数组被排序元素的结尾元素，若要对整个数组排序，则可以直接数组名+数组的长度即可，若不需要对全部元素进行排序，也是使用指针的加法来控制被排序元素的区间。cmp可以看作排序方法的规定，当从小到大进行排序时，可以不填写此参数，会默认的进行从小到大的排序。如果需要其他的排序方法，需要自己定义一个函数来控制排序方法，将函数名放在第三个参数的位置即可。注意该函数的返回值要求是bool型。</p>
+<p>（3）代码实现：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 1000</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span></span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> a[N]=&#123;&#125;;</span><br><span class="line">  <span class="type">int</span> n=<span class="number">0</span>;</span><br><span class="line">  cin&gt;&gt;n;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">    cin&gt;&gt;a[i];</span><br><span class="line">  &#125; </span><br><span class="line">  <span class="comment">//第一种，按默认形式进行排序</span></span><br><span class="line">  <span class="built_in">sort</span>(a,a+n);<span class="comment">//注意参数的写法</span></span><br><span class="line">  <span class="comment">//第二种,按自己规定的方法进行排序</span></span><br><span class="line">  <span class="built_in">sort</span>(a,a+n,cmp); </span><br><span class="line">  <span class="comment">//上述两种方法使用一种时需要将另一种注释化 </span></span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">    cout&lt;&lt;a[i]&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">  &#125; </span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span></span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a&gt;b;<span class="comment">//从大到小排列 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>二、较难算法</strong>（下面内容可能涉及数据结构，请自行了解，后续我学会后也会写文章）</p>
+<p>1.快速排序</p>
+<p>（1）基本原理：假设n个数需要被排序。快速排序其实使用的是分治算法（二分法）与递归的结合体。先选择一个基准点，进行循环，将比基准点小的数放在基准点的左边，比基准点大的数放在基准点的右边。再在左右两边进行同样的运算，即使用递归运算，经过递归后，这列数则自然有序了。</p>
+<p>（2）时间复杂度：O(nlog2 n) 不稳定</p>
+<p>（3）代码实现：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 1000</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">qs</span><span class="params">(<span class="type">int</span> a[],<span class="type">int</span> left,<span class="type">int</span> right)</span></span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> n=<span class="number">0</span>;</span><br><span class="line">  cin&gt;&gt;n;</span><br><span class="line">  <span class="type">int</span> a[N]=&#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">    cin&gt;&gt;a[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">qs</span>(a,<span class="number">0</span>,n<span class="number">-1</span>);<span class="comment">//注意n个数最大下标为n-1 </span></span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">    cout&lt;&lt;a[i]&lt;&lt;<span class="string">&quot; &quot;</span>; </span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">qs</span><span class="params">(<span class="type">int</span> a[],<span class="type">int</span> left,<span class="type">int</span> right)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(left&gt;right)&#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="type">int</span> i=left,j=right;</span><br><span class="line">  <span class="type">int</span> mid = (left+right)/<span class="number">2</span>;<span class="comment">//获得二分基准点</span></span><br><span class="line">  <span class="comment">//基准点左边从下标left开始，遍历左半边的数组，寻找第一个比a[mid]大的数</span></span><br><span class="line">  <span class="comment">//i从left开始向右，j从right开始向左，进行不断的循环判断是否交换，直到i&gt;j </span></span><br><span class="line">  <span class="keyword">while</span>(i&lt;=j)&#123;</span><br><span class="line">    <span class="comment">//先找到目前符合交换要求的i和j </span></span><br><span class="line">    <span class="keyword">while</span>(a[i]&lt;a[mid])&#123;</span><br><span class="line">      i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(a[j]&gt;a[mid])&#123;</span><br><span class="line">      j--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//对符合交换要求的i和j进行交换</span></span><br><span class="line">    <span class="built_in">swap</span>(a[i],a[j]);<span class="comment">//交换函数，不用再引入中间变量</span></span><br><span class="line">    i++;</span><br><span class="line">    j--; </span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">qs</span>(a,i,right);</span><br><span class="line">  <span class="built_in">qs</span>(a,left,j);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下面的这几种排序算法对现在的我来说还是太难，先放一放，之后学会了再进行总结“排序算法（二）”（不断挖坑）</p>
+<p>2.希尔排序<br>3.堆排序<br>4.二路归并排序<br>5.多路归并排序<br>6.桶排序<br>7基数排序</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+              <a href="/tags/Computer-science/" rel="tag"># Computer science</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/06/24/Linear-algebra-Note/" rel="prev" title="Linear algebra Note">
+      <i class="fa fa-chevron-left"></i> Linear algebra Note
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/06/26/Recurrent%20algorithm's%20application%EF%BC%9Agcd/" rel="next" title="Recurrent algorithm's application：gcd">
+      Recurrent algorithm's application：gcd <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+<div>
+    
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------ 本文结束,感谢您的阅读！------</div>
+    
+</div>
+
+    
+ </div>
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%88%E4%B8%80%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">排序算法（一）</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Wong Mathsion"
+      src="/images/Mathsion.jpg">
+  <p class="site-author-name" itemprop="name">Wong Mathsion</p>
+  <div class="site-description" itemprop="description">坚持为美好的东西而努力，不为失败或得不到而焦虑。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Mathsion2" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Mathsion2" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2646769409@qq.com" title="E-Mail → mailto:2646769409@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/509553744?spm_id_from=333.1007.0.0" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;509553744?spm_id_from&#x3D;333.1007.0.0" rel="noopener" target="_blank"><i class="fa fa-tv-retro fa-fw"></i>bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/turyion" title="zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;turyion" rel="noopener" target="_blank"><i class="fab fa-zhihu fa-fw"></i>zhihu</a>
+      </span>
+  </div>
+
+
+
+      </div>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?type=0&id=7507023813&auto=1&height=430"></iframe>  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wong Mathsion</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 支持
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'tjjIptGL8d9MRj1BVRS0WU4b-gzGzoHsz',
+      appKey     : 'uEDYbnfqOUxjmpngTAqU2maT',
+      placeholder: "欢迎畅所欲言",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+
+    </div>
+</body>
+</html>

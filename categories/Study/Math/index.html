@@ -484,45 +484,34 @@ window.addEventListener('pjax:success', () => {
 
   
 
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
     var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
     });
     new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: false,
-        appId: 'tjjIptGL8d9MRj1BVRS0WU4b-gzGzoHsz',
-        appKey: 'uEDYbnfqOUxjmpngTAqU2maT',
-        placeholder: '欢迎畅所欲言',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'10' || 10,
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'tjjIptGL8d9MRj1BVRS0WU4b-gzGzoHsz',
+      appKey     : 'uEDYbnfqOUxjmpngTAqU2maT',
+      placeholder: "欢迎畅所欲言",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
     });
-  </script>
-
-
-
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="/js/src/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    new Valine({
-        lang: 'zh-cn',
-        admin_email:'2646769409@qq.com', //填写博主邮箱 
-        el: '#comments' ,
-        appId: 'tjjIptGL8d9MRj1BVRS0WU4b-gzGzoHsz',
-        appKey: 'uEDYbnfqOUxjmpngTAqU2maT',
-        emoticon_url: 'https://cloud.panjunwen.com/alu',
-        emoticon_list: ["狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","暗地观察.png"],
-        placeholder: '欢迎畅所欲言',
-  });
-  </script>
+  }, window.Valine);
+});
+</script>
 
 
     </div>

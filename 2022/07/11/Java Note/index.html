@@ -30,7 +30,7 @@
 <meta property="og:description" content="Java Note来源：Mathsion">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-11T12:58:11.000Z">
-<meta property="article:modified_time" content="2022-07-11T13:37:11.014Z">
+<meta property="article:modified_time" content="2022-07-14T13:04:08.597Z">
 <meta property="article:author" content="Wong Mathsion">
 <meta property="article:tag" content="Computer science">
 <meta property="article:tag" content="Programming language">
@@ -211,10 +211,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-07-11 20:58:11 / 修改时间：21:37:11" itemprop="dateCreated datePublished" datetime="2022-07-11T20:58:11+08:00">2022-07-11</time>
+              <time title="创建时间：2022-07-11 20:58:11" itemprop="dateCreated datePublished" datetime="2022-07-11T20:58:11+08:00">2022-07-11</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-14 21:04:08" itemprop="dateModified" datetime="2022-07-14T21:04:08+08:00">2022-07-14</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -261,10 +267,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Java-Note"><a href="#Java-Note" class="headerlink" title="Java Note"></a>Java Note</h1><p><font color="purple" size=3>来源：Mathsion</font></p>
+        <h1 id="Java-Note"><a href="#Java-Note" class="headerlink" title="Java Note"></a>Java Note</h1><font color="purple" size=3>来源：Mathsion</font>
+
 <span id="more"></span>
-
-
 <h1 id="第一章-Java概述"><a href="#第一章-Java概述" class="headerlink" title="第一章 Java概述"></a>第一章 Java概述</h1><h2 id="一、基础知识"><a href="#一、基础知识" class="headerlink" title="一、基础知识"></a>一、基础知识</h2><h3 id="（一）软件开发"><a href="#（一）软件开发" class="headerlink" title="（一）软件开发"></a>（一）软件开发</h3><p>1.什么是软件？</p>
 <p>（1）软件：一系列按照特定顺序组织的计算机数据和指令的集合。</p>
 <p>（2）常见的软件：</p>
@@ -276,7 +281,6 @@
 <p>（1）图形化界面(GUI)：简单直观，使用者易于接受，容易上手操作。</p>
 <p>（2）命令行：需要控制台，输入特定的指令来使计算机完成一些操作。麻烦，需要记住指令。</p>
 <h3 id="（三）命令行方式"><a href="#（三）命令行方式" class="headerlink" title="（三）命令行方式"></a>（三）命令行方式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">在DOS里新建文件</span><br><span class="line">copy con Demo.java</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Demo</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;Hello Java&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">Ctrl+Z 保存</span><br><span class="line">type Demo.java</span><br><span class="line">编译运行：</span><br><span class="line">javac Demo.java</span><br><span class="line">java Demo</span><br><span class="line"></span><br><span class="line">dir 列出当前目录下的文件以及文件夹</span><br><span class="line">md 创建目录</span><br><span class="line">rd 删除目录</span><br><span class="line">cd 进入指定目录</span><br><span class="line">cd.. 退回到上一级目录</span><br><span class="line">cd/ 退回到根目录</span><br><span class="line">del 删除文件</span><br><span class="line">exit 退出dos命令行</span><br></pre></td></tr></table></figure>
-
 <h2 id="二、计算机语言"><a href="#二、计算机语言" class="headerlink" title="二、计算机语言"></a>二、计算机语言</h2><h3 id="（一）Java语言概述"><a href="#（一）Java语言概述" class="headerlink" title="（一）Java语言概述"></a>（一）Java语言概述</h3><ul>
 <li>是SUN(Stanford University Network, 斯坦福大学网络公司)1995年推出的一门高级编程语言。</li>
 <li>是一种面向Internet的编程语言。</li>
@@ -284,6 +288,7 @@
 <li>是简单易学，完全面向对象，安全可靠，与平台无关的编程语言。</li>
 </ul>
 <p>1.Java语言的三种技术架构</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -291,7 +296,8 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>J2EE(Java 2 Platform Enterise Edition)企业版</td>
 <td>是为了开发企业环境下的引用程序提供的一套解决方案。该技术体系中包含的技术如Servlet Jsp等，主要针对于web应用程序开发</td>
 </tr>
@@ -303,7 +309,9 @@
 <td>J2ME(Java 2 Platform Micro Edition)小型版</td>
 <td>该技术体系主要应用于小型电子消费类产品，如手机中的应用程序等。</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>2.Java语言的特点：跨平台性</p>
 <ul>
 <li>什么是跨平台性？通过Java语言编写的应用程序在不同的系统平台上都可以运行。</li>
@@ -311,6 +319,7 @@
 </ul>
 <p>因为有了JVM，所以同一个Java程序在三个不同的操作系统中都可以执行。这样就实现了Java程序的跨平台性。也称为Java具有良好的可移植性。</p>
 <h3 id="（二）Java语言的环境搭建"><a href="#（二）Java语言的环境搭建" class="headerlink" title="（二）Java语言的环境搭建"></a>（二）Java语言的环境搭建</h3><p>1.什么是JRE,JDK？</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -318,7 +327,8 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>JRE(Java Runtime Environment Java运行环境)</td>
 <td>包括Java虚拟机(JVM Java Virtual Machine)和Java所需的核心类库等，如果想要运行一个开发好的Java程序，计算机中只需要安装JRE即可。</td>
 </tr>
@@ -326,7 +336,9 @@
 <td>JDK(Java Development Kit Java开发工具包)</td>
 <td>JDK是提供给Java开发人员使用的，其中包含了Java的开发工具，也包括了JRE。所以安装了JDK，就不用在单独安装JRE了。其中的开发工具：编译工具(javac.exe) 打包工具(jar.exe)等</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p><strong>简单而言：使用JDK开发完成的Java程序，交给JRE区运行。</strong></p>
 <p>2.配置环境变量</p>
 <ul>
@@ -335,11 +347,11 @@
 <li>根据windows系统在查找可执行程序的原理，可以将java工具所在路径定义到path环境变量中，让系统帮我们去找运行执行的程序。</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">临时环境变量</span><br><span class="line">set path=C:\Program Files\Java\jdk1<span class="number">.8</span><span class="number">.0_181</span>\bin;%path%</span><br><span class="line">随意目录下运行Java</span><br><span class="line">set classpath=E:\test</span><br><span class="line">java HelloWorld</span><br><span class="line"></span><br><span class="line">Java_HOME环境变量的配置</span><br><span class="line">我的电脑右击属性-选择高级系统设置-环境变量-新建变量名JAVA_HOME，</span><br><span class="line">变量值输入JDK的安装目录C:\Program Files\Java\jdk1<span class="number">.8</span><span class="number">.0_181</span></span><br><span class="line">选中path环境变量编辑-输入%JAVA_HOME%\bin;移到最前面。</span><br><span class="line">环境变量配置完成，重启DOS命令行，输入javac命令</span><br></pre></td></tr></table></figure>
-
 <h1 id="第二章-Java基础语法"><a href="#第二章-Java基础语法" class="headerlink" title="第二章 Java基础语法"></a>第二章 Java基础语法</h1><h2 id="一、关键字"><a href="#一、关键字" class="headerlink" title="一、关键字"></a>一、关键字</h2><p>1.关键字的定义和特点</p>
 <p>（1）定义：被Java语言赋予了特殊含义的单词</p>
 <p>（2）特点：关键字中所有字母均为小写</p>
 <p>2.用于定义数据类型的关键字</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -356,7 +368,8 @@
 <th>void</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>类</td>
 <td>接口</td>
 <td>字节</td>
@@ -369,8 +382,11 @@
 <td>布尔</td>
 <td>空</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>3.保留字</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -379,13 +395,17 @@
 <th>null</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>真</td>
 <td>假</td>
 <td>空</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>4.用于定义流程控制的关键字</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -402,8 +422,15 @@
 <th>return</th>
 </tr>
 </thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
 </table>
+</div>
 <p>5.用于定义访问权限修饰符的关键字</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -412,8 +439,15 @@
 <th>public</th>
 </tr>
 </thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
 </table>
+</div>
 <p>6.用于定义类、函数、变量修饰符的关键字</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -423,8 +457,15 @@
 <th>synchronized</th>
 </tr>
 </thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
 </table>
+</div>
 <p>7.用于定义类与类之间关系的关键字</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -432,8 +473,15 @@
 <th>implements</th>
 </tr>
 </thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
 </table>
+</div>
 <p>8.用于定义建立实例及引用实例，判断实例的关键字</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -443,8 +491,15 @@
 <th>instanceof</th>
 </tr>
 </thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
 </table>
+</div>
 <p>9.用于异常处理的关键字</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -455,8 +510,15 @@
 <th>throws</th>
 </tr>
 </thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
 </table>
+</div>
 <p>10.用于包的关键字</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -464,8 +526,15 @@
 <th>import</th>
 </tr>
 </thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
 </table>
+</div>
 <p>11.其他修饰符关键字</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -476,7 +545,13 @@
 <th>assert</th>
 </tr>
 </thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
 </table>
+</div>
 <h2 id="二、标识符"><a href="#二、标识符" class="headerlink" title="二、标识符"></a>二、标识符</h2><ul>
 <li>在程序中自定义的一些名称。</li>
 <li>由26个英文字母大小写，数字：0~9 符号：_$组成</li>
@@ -504,11 +579,11 @@
 </ul>
 </li>
 <li>多行注释<ul>
-<li>格式：/* 注释文字 */</li>
+<li>格式：/<em> 注释文字 </em>/</li>
 </ul>
 </li>
 <li>文档注释<ul>
-<li>/** 注释文字 */</li>
+<li>/<em>* 注释文字 </em>/</li>
 </ul>
 </li>
 </ul>
@@ -521,7 +596,6 @@
 </ul>
 <p>例：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">这是我的Hello World程序。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Demo</span>&#123;</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	这是主函数，是程序的入口</span></span><br><span class="line"><span class="comment">	它的出现可以保证程序的独立运行</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="comment">// 这是输出语句用于将括号内的数据打印到控制台。</span></span><br><span class="line">		System.out.println(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h2 id="四、常量与变量"><a href="#四、常量与变量" class="headerlink" title="四、常量与变量"></a>四、常量与变量</h2><h3 id="（一）常量"><a href="#（一）常量" class="headerlink" title="（一）常量"></a>（一）常量</h3><ul>
 <li>常量表示不能改变的数值。</li>
 <li>Java中常量的分类：<ol>
@@ -556,7 +630,6 @@
 </ul>
 <p>举例：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">十进制--&gt;二进制 <span class="number">6</span>的二进制 </span><br><span class="line">原理：对十进制数进行除<span class="number">2</span>运算 </span><br><span class="line"><span class="number">6</span>/<span class="number">2</span>--<span class="number">0</span> <span class="number">3</span>/<span class="number">2</span>--<span class="number">1</span> <span class="number">1</span>/<span class="number">2</span>--<span class="number">1</span> <span class="number">110</span></span><br><span class="line"></span><br><span class="line">二进制--&gt;十进制 <span class="number">110</span>的十进制 </span><br><span class="line">原理：二进制乘以<span class="number">2</span>的过程。 </span><br><span class="line"><span class="number">0</span>*<span class="number">2</span>(<span class="number">0</span>) + <span class="number">1</span>*<span class="number">2</span>(<span class="number">1</span>) + <span class="number">1</span>*<span class="number">2</span>(<span class="number">2</span>) = <span class="number">0</span> + <span class="number">2</span> + <span class="number">4</span> = <span class="number">6</span> </span><br><span class="line"><span class="number">128</span> <span class="number">64</span> <span class="number">32</span> <span class="number">16</span> <span class="number">8</span> <span class="number">4</span> <span class="number">2</span> <span class="number">1</span>   </span><br><span class="line"> <span class="number">5</span>  +  <span class="number">4</span>  = <span class="number">9</span> </span><br><span class="line">----------------  </span><br><span class="line"><span class="number">101</span> + <span class="number">100</span> = <span class="number">1001</span> --&gt; <span class="number">9</span></span><br><span class="line"></span><br><span class="line">转成<span class="number">16</span>进制。四个二进制位就是一个十六进制位。</span><br><span class="line">  <span class="number">0101</span>-<span class="number">1010</span></span><br><span class="line">  ---------</span><br><span class="line">    <span class="number">5</span>    A  --&gt; <span class="number">0x5A</span></span><br><span class="line"></span><br><span class="line">转成<span class="number">8</span>进制。三个二进制位代表一位</span><br><span class="line"><span class="number">001</span>-<span class="number">011</span>-<span class="number">010</span> = <span class="number">132</span></span><br><span class="line">-----------</span><br><span class="line"> <span class="number">1</span>   <span class="number">3</span>   <span class="number">2</span></span><br><span class="line"></span><br><span class="line">负数的二进制表现形式。</span><br><span class="line"><span class="number">6</span> = <span class="number">110</span></span><br><span class="line">-<span class="number">6</span> 其实就是<span class="number">6</span>的二进制取反+<span class="number">1</span></span><br><span class="line">取反：将二进制的<span class="number">1</span>变成<span class="number">0</span>,<span class="number">0</span>变成<span class="number">1</span></span><br><span class="line"><span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0110</span> </span><br><span class="line"> <span class="number">1111</span>-<span class="number">1111</span> <span class="number">1111</span>-<span class="number">1111</span> <span class="number">1111</span>-<span class="number">1111</span> <span class="number">1111</span>-<span class="number">1001</span></span><br><span class="line">+<span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0001</span></span><br><span class="line">----------------------------------------</span><br><span class="line"> <span class="number">1111</span>-<span class="number">1111</span> <span class="number">1111</span>-<span class="number">1111</span> <span class="number">1111</span>-<span class="number">1111</span> <span class="number">1111</span>-<span class="number">1010</span> = -<span class="number">6</span></span><br></pre></td></tr></table></figure>
-
 <h3 id="（二）变量"><a href="#（二）变量" class="headerlink" title="（二）变量"></a>（二）变量</h3><ul>
 <li>变量的概念：<ul>
 <li>内存中的一个存储区域</li>
@@ -604,26 +677,22 @@
 </li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">📙 a在ASCII码中对应值为97char和int相加，char会被强制转换为int 97+1 = 98</span><br></pre></td></tr></table></figure>
-
-
 <ul>
 <li>自动类型提升</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">byte</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">3</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">4</span>;</span><br><span class="line">x = x + b; <span class="comment">// b会自动提升为int类型进行运算。</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>强制类型转换</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">byte</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">3</span>;</span><br><span class="line">b = b + <span class="number">4</span>; <span class="comment">// 报错</span></span><br><span class="line">b = (<span class="type">byte</span>)b + <span class="number">4</span>; <span class="comment">// 强制类型转换，强制将b+4的结果转换位byte类型，再赋值给b。</span></span><br></pre></td></tr></table></figure>
-
 <p>‼️THINKING</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">byte</span> <span class="variable">b1</span> <span class="operator">=</span> <span class="number">3</span>,b2 = <span class="number">4</span>,b;</span><br><span class="line">b = b1 + b2;</span><br><span class="line">b = <span class="number">3</span> + <span class="number">4</span>;</span><br></pre></td></tr></table></figure>
-
 <p>哪一句编译失败？为什么？</p>
 <blockquote>
 <p>b = b1 + b2; //报错，因为java虚拟机在运算时会自动将b1和b2转换成int类型相加，所得的值是一个int类型的值，所以需要强转。<br>b = 3 + 4;// byte类型的取值范围是-128到127，两个值相加编译器能够知道结果是多少，直接赋值没有问题，如果换成b=b1+4，就会报错，因为编译器不知道b1的值，他只知道b1是一个byte类型的变量，一个byte变量和一个int类型相加，会自动转换成int类型</p>
 </blockquote>
-<h2 id="五、运算符"><a href="#五、运算符" class="headerlink" title="五、运算符"></a>五、运算符</h2><h3 id="（一）算术运算符"><a href="#（一）算术运算符" class="headerlink" title="（一）算术运算符"></a>（一）算术运算符</h3><table>
+<h2 id="五、运算符"><a href="#五、运算符" class="headerlink" title="五、运算符"></a>五、运算符</h2><h3 id="（一）算术运算符"><a href="#（一）算术运算符" class="headerlink" title="（一）算术运算符"></a>（一）算术运算符</h3><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>运算符</th>
@@ -632,7 +701,8 @@
 <th>结果</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>+</td>
 <td>正号</td>
 <td>+3</td>
@@ -704,7 +774,9 @@
 <td>“he”+“llo”</td>
 <td>“hello”</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <ul>
 <li>算术运算符的注意问题<ul>
 <li>如果对负数取模，可以把模数负号忽略不记，如：5%-2=1。但被模数的负数就另当别论。大数%小数取余，小数%大数=小数。</li>
@@ -716,18 +788,16 @@
 </li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//应用举例</span></span><br><span class="line"><span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">4270</span>;</span><br><span class="line">x = x / <span class="number">1000</span> * <span class="number">1000</span>; </span><br><span class="line">System.out.println(x); <span class="comment">// 4000</span></span><br><span class="line"></span><br><span class="line">System.out.println(-<span class="number">1</span>%<span class="number">5</span>); <span class="comment">// -1</span></span><br><span class="line"><span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">3</span>,b;</span><br><span class="line">a++; <span class="comment">// a = a + 1; </span></span><br><span class="line">b = ++a;</span><br><span class="line">System.out.println(<span class="string">&quot;a = &quot;</span> + a + <span class="string">&quot;b = &quot;</span> + b); <span class="comment">// a = 5,b = 5</span></span><br><span class="line">System.out.println(<span class="string">&quot;5+5=&quot;</span>+(<span class="number">5</span>+<span class="number">5</span>)); <span class="comment">// 5+5=10</span></span><br></pre></td></tr></table></figure>
-
 <h3 id="（二）赋值运算符"><a href="#（二）赋值运算符" class="headerlink" title="（二）赋值运算符"></a>（二）赋值运算符</h3><ul>
 <li>符号：=，+=，-=，*=，/=，%=</li>
 <li>示例：</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a,b,c;</span><br><span class="line">a=b=c=<span class="number">3</span>;</span><br><span class="line"><span class="type">int</span> a=<span class="number">3</span>;</span><br><span class="line">a+=<span class="number">5</span>; <span class="comment">//等同运算a=a+5;</span></span><br></pre></td></tr></table></figure>
-
 <p>‼️THINKING</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">short</span> <span class="variable">s</span> <span class="operator">=</span> <span class="number">3</span>;</span><br><span class="line"><span class="comment">// 2是int类型的常量 s+2会自动转换成int型，int型赋给一个short型的s自然会出错</span></span><br><span class="line">s = s + <span class="number">2</span>; <span class="comment">// 报错 改为(short)(s+2)</span></span><br><span class="line">s += <span class="number">2</span>;<span class="comment">//**和上面有什么区别？**</span></span><br></pre></td></tr></table></figure>
-
 <p>编译器自动将+=运算符后面的操作数强制转换为前面变量的类型，同时类似的还有: -= *= /= %=。</p>
-<h3 id="（三）比较运算符"><a href="#（三）比较运算符" class="headerlink" title="（三）比较运算符"></a>（三）比较运算符</h3><table>
+<h3 id="（三）比较运算符"><a href="#（三）比较运算符" class="headerlink" title="（三）比较运算符"></a>（三）比较运算符</h3><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>运算符</th>
@@ -736,7 +806,8 @@
 <th>结果</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>==</td>
 <td>相等于</td>
 <td>4==3</td>
@@ -778,12 +849,15 @@
 <td>“Hello” instance String</td>
 <td>true</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <ul>
 <li>比较运算符的结果都是boolean型，也就是要么是true，要么是false。</li>
 <li>比较运算符”==“不能误写成”=”。</li>
 </ul>
-<h3 id="（四）逻辑运算符"><a href="#（四）逻辑运算符" class="headerlink" title="（四）逻辑运算符"></a>（四）逻辑运算符</h3><table>
+<h3 id="（四）逻辑运算符"><a href="#（四）逻辑运算符" class="headerlink" title="（四）逻辑运算符"></a>（四）逻辑运算符</h3><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>运算符</th>
@@ -792,16 +866,19 @@
 <th>结果</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>&amp;</td>
 <td>AND(与)</td>
 <td>false&amp;true</td>
 <td>false</td>
 </tr>
 <tr>
-<td>|</td>
+<td>\</td>
+<td></td>
 <td>OR(或)</td>
-<td>false|true</td>
+<td>false\</td>
+<td>true</td>
 <td>true</td>
 </tr>
 <tr>
@@ -823,14 +900,20 @@
 <td>false</td>
 </tr>
 <tr>
-<td>||</td>
+<td>\</td>
+<td>\</td>
+<td></td>
 <td>OR(短路)</td>
-<td>false||true</td>
+<td>false\</td>
+<td>\</td>
+<td>true</td>
 <td>true</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <ul>
-<li>逻辑运算符用于连接布尔型表达式，在Java中不可以写成3&lt;x&lt;6，应该写成x&gt;3&amp;x&lt;6。</li>
+<li>逻辑运算符用于连接布尔型表达式，在Java中不可以写成3<x<6，应该写成x>3&amp;x&lt;6。</li>
 <li><strong>“&amp;“和”&amp;&amp;”的区别：</strong><ul>
 <li>&amp;时，左边无论真假，右边都进行运算</li>
 <li>&amp;&amp;时，如果左边为真，右边参与运算，如果左边为假，那么右边不参与运算。”|“和”||”的区别同理，双或时，左边为真，右边不参与运算。</li>
@@ -839,19 +922,16 @@
 <li>异或(^)与或(|)的不同之处是：当左右都为true时，结果为false。</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">7</span>;</span><br><span class="line">x &gt; <span class="number">3</span> &amp; x &lt; <span class="number">6</span>; <span class="comment">// true &amp; false = false</span></span><br><span class="line"><span class="literal">true</span> &amp; <span class="literal">true</span> = <span class="literal">true</span>;</span><br><span class="line"><span class="literal">true</span> &amp; <span class="literal">false</span> = <span class="literal">false</span>;</span><br><span class="line"><span class="literal">false</span> &amp; <span class="literal">true</span> = <span class="literal">false</span>;</span><br><span class="line"><span class="literal">false</span> &amp; <span class="literal">false</span> = <span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
-
 <p>&amp;(与) 只要两边的boolean表达式结果，有一个为false。那么结果就是false。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">true</span> &amp; <span class="literal">true</span> = <span class="literal">true</span>;</span><br><span class="line"><span class="literal">true</span> &amp; <span class="literal">false</span> = <span class="literal">true</span>;</span><br><span class="line"><span class="literal">false</span> &amp; <span class="literal">true</span> = <span class="literal">true</span>;</span><br><span class="line"><span class="literal">false</span> &amp; <span class="literal">false</span> = <span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
-
 <p>|(或) 两边只要有一个为true，结果为true。只有两边都有false，结果为false。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">true</span> ^ <span class="literal">true</span> = <span class="literal">false</span>;</span><br><span class="line"><span class="literal">true</span> ^ <span class="literal">false</span> = <span class="literal">true</span>;</span><br><span class="line"><span class="literal">false</span> ^ <span class="literal">true</span> = <span class="literal">true</span>;</span><br><span class="line"><span class="literal">false</span> ^ <span class="literal">false</span> = <span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
-
 <p>^(异或) 两边相同结果是false。</p>
 <p>!(非)   !true = false, !false = true</p>
 <p>短路&amp;&amp;：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">2</span>;</span><br><span class="line">a&gt;<span class="number">3</span> &amp;&amp; a&lt;<span class="number">6</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">&amp;和&amp;&amp;的特点：</span></span><br><span class="line"><span class="comment">&amp; 无论左边是true还是false，右边都运算。</span></span><br><span class="line"><span class="comment">&amp;&amp; 当左边为false时，右边不运算。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">| 两边都参与运算</span></span><br><span class="line"><span class="comment">|| 当左边为true。右边不运算</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="（五）位运算符"><a href="#（五）位运算符" class="headerlink" title="（五）位运算符"></a>（五）位运算符</h3><table>
+<h3 id="（五）位运算符"><a href="#（五）位运算符" class="headerlink" title="（五）位运算符"></a>（五）位运算符</h3><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>运算符</th>
@@ -859,10 +939,11 @@
 <th>范例</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>&lt;&lt;</td>
 <td>左移</td>
-<td>3&lt;&lt;2=12–&gt;322=12</td>
+<td>3&lt;<2=12–>322=12</td>
 </tr>
 <tr>
 <td>&gt;&gt;</td>
@@ -880,9 +961,11 @@
 <td>6&amp;3==2</td>
 </tr>
 <tr>
-<td>|</td>
+<td>\</td>
+<td></td>
 <td>或运算</td>
-<td>6|3=7</td>
+<td>6\</td>
+<td>3=7</td>
 </tr>
 <tr>
 <td>^</td>
@@ -894,9 +977,12 @@
 <td>反码</td>
 <td>~6=-7</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>位运算是直接对二进制进行运算。</p>
 <p><strong>位运算符的细节</strong></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -904,7 +990,8 @@
 <th>位运算符的细节</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>&lt;&lt;</td>
 <td>空位补0，被移除的高位丢弃，空缺位补0</td>
 </tr>
@@ -921,30 +1008,31 @@
 <td>二进制位进行&amp;运算，只有1&amp;1时结果是1，否则是0;</td>
 </tr>
 <tr>
-<td>|</td>
-<td>二进制位进行|运算，只有0|0时结果是0，否则是1;</td>
+<td>\</td>
+<td></td>
+<td>二进制位进行\</td>
+<td>运算，只有0\</td>
+<td>0时结果是0，否则是1;</td>
 </tr>
 <tr>
 <td>^</td>
 <td>任何相同二进制位进行 ^ 运算，结果是0；1 ^ 1 = 0, 0 ^ 0 = 0 不相同二进制位 ^ 运算结果是1。1 ^ 0=10 ^ 1=1</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//应用举例</span></span><br><span class="line"><span class="number">3</span> &lt;&lt; <span class="number">2</span> = <span class="number">12</span>;(<span class="number">3</span>*<span class="number">4</span>=<span class="number">12</span>)  <span class="number">3</span> &lt;&lt; <span class="number">1</span> = <span class="number">6</span>;(<span class="number">3</span>*<span class="number">2</span>=<span class="number">6</span>)  <span class="number">3</span> &lt;&lt; <span class="number">3</span> = <span class="number">24</span>;(<span class="number">3</span>*<span class="number">8</span>=<span class="number">24</span>)</span><br><span class="line"><span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0011</span> <span class="number">3</span></span><br><span class="line">&lt;&lt; <span class="number">2</span></span><br><span class="line"><span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">1100</span> <span class="number">12</span></span><br><span class="line"></span><br><span class="line"><span class="number">6</span> &gt;&gt; <span class="number">2</span> = <span class="number">1</span>;(<span class="number">6</span>/<span class="number">4</span>=<span class="number">1</span>)  <span class="number">6</span> &gt;&gt; <span class="number">1</span> = <span class="number">3</span>;(<span class="number">6</span>/<span class="number">2</span>=<span class="number">3</span>) </span><br><span class="line"><span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0110</span> <span class="number">6</span></span><br><span class="line">&gt;&gt; <span class="number">2</span></span><br><span class="line"><span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0001</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="number">3</span> &lt;&lt; <span class="number">2</span> --&gt; <span class="number">3</span>*<span class="number">2</span>的<span class="number">2</span>次幂</span><br><span class="line">&lt;&lt; 其实就是乘以<span class="number">2</span>的移动的位数次幂</span><br><span class="line">&gt;&gt; 就是除以<span class="number">2</span>的移动的位数次幂</span><br><span class="line"></span><br><span class="line"><span class="number">1111</span>-<span class="number">1111</span> <span class="number">1111</span>-<span class="number">1111</span> <span class="number">1111</span>-<span class="number">1111</span> <span class="number">1111</span>-<span class="number">1010</span> = -<span class="number">6</span></span><br><span class="line">&gt;&gt; <span class="number">2</span></span><br><span class="line"><span class="number">1111</span>-<span class="number">1111</span> <span class="number">1111</span>-<span class="number">1111</span> <span class="number">1111</span>-<span class="number">1111</span> <span class="number">1111</span>-<span class="number">1110</span></span><br><span class="line">&gt;&gt;&gt; <span class="number">2</span></span><br><span class="line"><span class="number">0011</span>-<span class="number">1111</span> <span class="number">1111</span>-<span class="number">1111</span> <span class="number">1111</span>-<span class="number">1111</span> <span class="number">1111</span>-<span class="number">1110</span></span><br><span class="line">&gt;&gt; 最高位补什么由原有数据的最高位值而定。</span><br><span class="line">如果最高位<span class="number">0</span>，右移后，用<span class="number">0</span>补空位。</span><br><span class="line">如果最高位<span class="number">1</span>，右移后，用<span class="number">1</span>不空位。</span><br><span class="line">&gt;&gt;&gt; 无论最高位是什么，右移后，都用<span class="number">0</span>补。</span><br><span class="line"></span><br><span class="line">&amp; </span><br><span class="line"><span class="number">6</span> &amp; <span class="number">3</span> = <span class="number">2</span></span><br><span class="line"> <span class="number">110</span></span><br><span class="line">&amp;<span class="number">011</span></span><br><span class="line">-----</span><br><span class="line"> <span class="number">010</span> = <span class="number">2</span></span><br><span class="line"></span><br><span class="line">|</span><br><span class="line"><span class="number">6</span> | <span class="number">5</span> = <span class="number">7</span></span><br><span class="line"> <span class="number">110</span></span><br><span class="line">|<span class="number">101</span></span><br><span class="line">------</span><br><span class="line"> <span class="number">111</span> = <span class="number">7</span></span><br><span class="line"></span><br><span class="line">^</span><br><span class="line"><span class="number">6</span> ^ <span class="number">5</span> = <span class="number">3</span></span><br><span class="line"> <span class="number">110</span></span><br><span class="line">^<span class="number">101</span></span><br><span class="line">------</span><br><span class="line"> <span class="number">011</span> = <span class="number">3</span></span><br><span class="line"> </span><br><span class="line">System.out.println(~<span class="number">6</span>); <span class="comment">// -7</span></span><br><span class="line"><span class="number">0000.</span>.<span class="number">.000110</span></span><br><span class="line"><span class="number">1111.</span>.<span class="number">.111001</span></span><br><span class="line"><span class="number">0000.</span>.<span class="number">.000001</span></span><br><span class="line"><span class="number">1111.</span>.<span class="number">.111000</span></span><br><span class="line"><span class="number">0000.</span>.<span class="number">.000111</span></span><br><span class="line"></span><br><span class="line">System.out.println(<span class="number">7</span> ^ <span class="number">4</span>);</span><br><span class="line"><span class="number">7</span> ^ <span class="number">4</span></span><br><span class="line"> <span class="number">111</span></span><br><span class="line">^<span class="number">100</span></span><br><span class="line">-----</span><br><span class="line"> <span class="number">011</span></span><br><span class="line">^<span class="number">100</span></span><br><span class="line">-----</span><br><span class="line"> <span class="number">111</span> = <span class="number">7</span> ^ <span class="number">4</span> = <span class="number">4</span> ^ <span class="number">4</span> = <span class="number">7</span></span><br><span class="line"> 一个数异或同一个数两次，结果还是那个数。</span><br><span class="line"></span><br><span class="line"><span class="comment">//十六进制形式</span></span><br><span class="line"><span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0100</span>-<span class="number">1100</span> <span class="number">1110</span>-<span class="number">0110</span></span><br><span class="line">----------------------------------------</span><br><span class="line">		    		  <span class="number">4</span>   <span class="number">12</span>   <span class="number">14</span>   <span class="number">6</span></span><br><span class="line"></span><br><span class="line"> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0100</span>-<span class="number">1100</span> <span class="number">1110</span>-<span class="number">0110</span></span><br><span class="line">&amp;<span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">1111</span></span><br><span class="line">-----------------------------------------</span><br><span class="line"> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0110</span></span><br><span class="line">===========================================</span><br><span class="line"></span><br><span class="line"><span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0011</span>-<span class="number">1100</span> = <span class="number">60</span></span><br><span class="line"><span class="number">60</span>&amp;<span class="number">15</span> = <span class="number">12</span></span><br><span class="line"><span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0011</span>-<span class="number">1100</span></span><br><span class="line"><span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">1111</span></span><br><span class="line">-----------------------------------------</span><br><span class="line"><span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">1100</span> = <span class="number">12</span></span><br><span class="line"></span><br><span class="line">temp = <span class="number">60</span>&gt;&gt;&gt;<span class="number">4</span></span><br><span class="line">temp &amp; <span class="number">15</span> = <span class="number">3</span></span><br><span class="line"><span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0011</span>	<span class="number">1100</span></span><br><span class="line"><span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">1111</span></span><br><span class="line">----------------------------------------</span><br><span class="line"><span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0000</span> <span class="number">0000</span>-<span class="number">0011</span> = <span class="number">3</span></span><br></pre></td></tr></table></figure>
-
 <h3 id="（六）三元运算符"><a href="#（六）三元运算符" class="headerlink" title="（六）三元运算符"></a>（六）三元运算符</h3><p><strong>格式：(条件表达式)?表达式1:表达式2;</strong></p>
 <ul>
 <li>如果条件为true，运算后的结果是表达式1；</li>
 <li>如果条件为false，运算后的结果是表达式2；</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//应用举例</span></span><br><span class="line"><span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">3</span>, y = <span class="number">4</span>,z;</span><br><span class="line">z = (x &gt; <span class="number">1</span>) ? x: y;</span><br><span class="line">System.out.println(<span class="string">&quot;z = &quot;</span> + z);</span><br></pre></td></tr></table></figure>
-
 <h2 id="六、流程控制"><a href="#六、流程控制" class="headerlink" title="六、流程控制"></a>六、流程控制</h2><h3 id="（一）判断结构"><a href="#（一）判断结构" class="headerlink" title="（一）判断结构"></a>（一）判断结构</h3><p>格式：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(条件表达式)&#123;</span><br><span class="line">		<span class="comment">// 执行语句;</span></span><br><span class="line">	&#125;<span class="keyword">else</span> <span class="keyword">if</span>(条件表达式)&#123;</span><br><span class="line">		<span class="comment">// 执行语句;</span></span><br><span class="line">	&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="comment">// 执行语句;</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	if else结果简写格式：</span></span><br><span class="line"><span class="comment">	变量 = （条件表达式）?表达式1:表达式2;</span></span><br><span class="line"><span class="comment">	三元运算符：</span></span><br><span class="line"><span class="comment">	好处：可以简化if else代码</span></span><br><span class="line"><span class="comment">	弊端：因为是一个运算符，所以运算完必须要有一个结果。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
 <p>特点：条件表达式无论写成什么样子，只看最终的结果是否是true或者false</p>
 <h3 id="（二）选择结构"><a href="#（二）选择结构" class="headerlink" title="（二）选择结构"></a>（二）选择结构</h3><p>格式：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>(表达式) &#123;</span><br><span class="line">		<span class="keyword">case</span> 取值<span class="number">1</span>:</span><br><span class="line">			执行语句;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> 取值<span class="number">2</span>:</span><br><span class="line">			执行语句;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		...</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">			执行语句;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
 <ol>
 <li>switch语句选择的类型只有四种：byte、short、int、char。</li>
 <li>case之间与default没有顺序。先执行第一个case，没有匹配的case执行default。</li>
@@ -956,14 +1044,12 @@
 </blockquote>
 <h3 id="（三）循环结构"><a href="#（三）循环结构" class="headerlink" title="（三）循环结构"></a>（三）循环结构</h3><p>1.while及do while语句</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//语句格式：</span></span><br><span class="line">	<span class="keyword">while</span>(条件表达式) &#123;</span><br><span class="line">		<span class="comment">//执行语句;</span></span><br><span class="line">	&#125;</span><br><span class="line">		</span><br><span class="line">	<span class="keyword">do</span> &#123;</span><br><span class="line">		<span class="comment">//执行语句;</span></span><br><span class="line">	&#125; <span class="keyword">while</span> (条件表达式);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <p>while：先判断条件，只有条件满足才执行循环体。</p>
 <p>do while：先执行循环体，再判断条件，条件满足，再继续执行循环体。<strong>特点：无论条件是否满足，循环体至少执行一次。</strong></p>
 <p>2.for语句</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//语句格式：</span></span><br><span class="line">	<span class="keyword">for</span>(初始化表达式;循环条件表达式;循环后的操作表达式) &#123;</span><br><span class="line">		<span class="comment">//执行语句;</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	1. 变量有自己的作用域。</span></span><br><span class="line"><span class="comment">	对于for来讲： 如果将用于控制循环的增量定义在for语句中，</span></span><br><span class="line"><span class="comment">  如果变量只在for语句中那么该变量只在for语句内有效。</span></span><br><span class="line"><span class="comment">	for语句执行完毕。该变量在内存中被释放。 </span></span><br><span class="line"><span class="comment"> 	2. for和while可以进行互换。如果需要定义循环增量。用for更为合适。</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 总结：什么时候使用循环结构？ 当要对某些语句执行很多次时，就是用循环结构。</span></span><br></pre></td></tr></table></figure>
-
 <ol>
-<li> for里面表达式运行的顺序，初始化表达式只读一次，判断循环条件，为真就执行循环体，然后再执行循环后的操作表达式，接着继续判断循环条件，重复找的过程，直到条件不满足为止。</li>
+<li>for里面表达式运行的顺序，初始化表达式只读一次，判断循环条件，为真就执行循环体，然后再执行循环后的操作表达式，接着继续判断循环条件，重复找的过程，直到条件不满足为止。</li>
 <li>while与for可以互换，区别在于for为了循环而定义的变量在for循环结束就是在内存中释放。而while循环使用的变量在循环结束后还可以继续使用。</li>
 <li>最简单无限循环格式：while(true),for( ; ; )，无限循环存在的原因是并不知道循环多少次，而是根据某些条件，来控制循环。</li>
 </ol>
@@ -977,7 +1063,6 @@
 <li>标号的出现，可以让这两个语句作用于指定的范围。格式为 ”标号名称:“</li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//应用举例</span></span><br><span class="line">w: <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">0</span>; x &lt; <span class="number">3</span>; x++) &#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">y</span> <span class="operator">=</span> <span class="number">0</span>; y &lt; <span class="number">4</span>; y++) &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;x = &quot;</span> + x); <span class="comment">// 0</span></span><br><span class="line">		<span class="keyword">break</span> w;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// continue 只能作用于循环结构。继续循环。特点：结束本次循环，继续下一次循环</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">1</span>; x &lt;= <span class="number">10</span>; x++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (x % <span class="number">2</span> == <span class="number">1</span>)</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		<span class="comment">// System.out.println(&quot;x = &quot; + x); // 2 4 6 8 10</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	w: <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">0</span>; x &lt; <span class="number">3</span>; x++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">y</span> <span class="operator">=</span> <span class="number">0</span>; y &lt; <span class="number">4</span>; y++) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;x = &quot;</span> + x); <span class="comment">// 0 1 2</span></span><br><span class="line">			<span class="keyword">continue</span> w;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	   记住：</span></span><br><span class="line"><span class="comment">	   1. break和continue语句作用的范围。 </span></span><br><span class="line"><span class="comment">	   2. break和continue单独存在时，下面不可以有任何语句。因为都执行不到。</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="comment">// break;</span></span><br><span class="line">	<span class="comment">// continue;</span></span><br></pre></td></tr></table></figure>
-
 <h2 id="七、函数"><a href="#七、函数" class="headerlink" title="七、函数"></a>七、函数</h2><h3 id="（一）函数的定义"><a href="#（一）函数的定义" class="headerlink" title="（一）函数的定义"></a>（一）函数的定义</h3><ul>
 <li>什么是函数？<ul>
 <li>函数就是定义在类中的具有特定功能的一段独立小程序。</li>
@@ -987,7 +1072,6 @@
 <li>函数的格式：</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">修饰符 返回值类型 函数名(参数类型 形式参数<span class="number">1</span>, 参数类型 形式参数<span class="number">2</span>, ...) &#123;</span><br><span class="line">	执行语句;</span><br><span class="line">	<span class="keyword">return</span> 返回值;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//返回值类型：函数运行后的结果是数据类型。</span></span><br><span class="line"><span class="comment">//参数类型：是形式参数的数据类型。形式参数：传递给参数的具体数值。</span></span><br><span class="line"><span class="comment">//return：用于结束函数。</span></span><br><span class="line"><span class="comment">//返回值：该值会返回给调用者。</span></span><br></pre></td></tr></table></figure>
-
 <h3 id="（二）函数的特点"><a href="#（二）函数的特点" class="headerlink" title="（二）函数的特点"></a>（二）函数的特点</h3><ul>
 <li>定义函数可以将功能代码进行封装</li>
 <li>函数只有被调用才会被执行</li>
@@ -1004,7 +1088,6 @@
 </li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实例：</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">需求：定义一个功能，可以实现两个整数的加法运算。</span></span><br><span class="line"><span class="comment">分析：</span></span><br><span class="line"><span class="comment">该功能的运算结果是什么？两个数的和，也是一个整数(int)</span></span><br><span class="line"><span class="comment">在实现该功能的过程中是否有未知内容参与运算？加数和被加数是不确定的。（两个参数int，int）</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">getSun</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> x+y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h3 id="（四）函数的重载"><a href="#（四）函数的重载" class="headerlink" title="（四）函数的重载"></a>（四）函数的重载</h3><p>1.重载的概念：在同一个类中，允许存在一个以上的同名函数，只要他们具有不同的参数列表。</p>
 <p>2.重载的特点：与返回值类型无关，只看参数列表。</p>
 <p>3.重载的好处：方便于阅读，优化了程序设计</p>
@@ -1014,6 +1097,7 @@
 <h2 id="八、数组"><a href="#八、数组" class="headerlink" title="八、数组"></a>八、数组</h2><h3 id="（一）数组的定义"><a href="#（一）数组的定义" class="headerlink" title="（一）数组的定义"></a>（一）数组的定义</h3><p>1.概念：同一种类型数据的集合。其实数组就是一个容器。</p>
 <p>2.数组的好处：可以自动给数组中的元素从0开始编号，方便操作这些元素。</p>
 <p>3.格式：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1021,7 +1105,8 @@
 <th>示例</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>元素类型[] 数组名 = new 元素类型[元素个数或数组长度]</td>
 <td>int[] arr = new int[5]</td>
 </tr>
@@ -1029,8 +1114,11 @@
 <td>元素类型[] 数组名 = new 元素类型[] {元素, 元素, …}</td>
 <td>int[] arr = new int[]{3, 5, 1, 7}; int[] arr ={3,5,1,7}.</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h3 id="（二）内存结构"><a href="#（二）内存结构" class="headerlink" title="（二）内存结构"></a>（二）内存结构</h3><p>Java程序在运行时，需要在内存中的分配空间。为了提高运算效率，有对空间进行了不同区域的划分，因为每一片区域都有特定的处理数据方式和内存管理方式。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1038,7 +1126,8 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>栈内存</td>
 <td>用于存储局部变量，当数据使用完，所占空间会自动释放。</td>
 </tr>
@@ -1058,31 +1147,30 @@
 <td>寄存器</td>
 <td>给CPU使用，和我们开发无关。</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h3 id="（三）数组操作常见问题"><a href="#（三）数组操作常见问题" class="headerlink" title="（三）数组操作常见问题"></a>（三）数组操作常见问题</h3><p>1.数组下标越界异常（<strong>ArrayIndexOutOfBoundsException</strong>）</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//举例</span></span><br><span class="line"><span class="type">int</span>[] arr = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">2</span>];</span><br><span class="line">System.out.println(arr[<span class="number">3</span>]):</span><br><span class="line"><span class="comment">//访问到了数组中的不存在的下标时发生。</span></span><br></pre></td></tr></table></figure>
-
 <p>2.空指针异常（<strong>NullPointerException</strong>）</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//举例</span></span><br><span class="line"><span class="type">int</span>[] arr = <span class="literal">null</span>;</span><br><span class="line">System.out.println(arr[<span class="number">0</span>]);</span><br><span class="line"><span class="comment">//arr引用没有指向实体，却在操作实体中的元素时。</span></span><br></pre></td></tr></table></figure>
-
 <h3 id="（四）数组常见操作"><a href="#（四）数组常见操作" class="headerlink" title="（四）数组常见操作"></a>（四）数组常见操作</h3><p>1.获取数组元素个数（数组长度）   <strong>数组名称.length</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//举例</span></span><br><span class="line"><span class="comment">// 获取数组中的元素。通常会用到遍历。</span></span><br><span class="line">	<span class="type">int</span>[] arr = &#123; <span class="number">3</span>, <span class="number">6</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">7</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">10</span> &#125;;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 数组中有一个属性可以直接获取到数组元素个数。length</span></span><br><span class="line">	<span class="comment">// 使用方式：**数组名称.length**</span></span><br><span class="line">	System.out.println(arr.length); <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
-
 <p>2.获取最值（最大值，最小值）</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * 获取数组中的最大值。 </span></span><br><span class="line"><span class="comment">	 * 思路： </span></span><br><span class="line"><span class="comment">	 * 1. 获取最值需要进行比较。每一次比较都会有一个较大的值。因为该值不确定。 通过一个变量进行临时存储。 </span></span><br><span class="line"><span class="comment">	 * 2. 让数组中的每一个元素都和这个变量中的值进行比较。 如果大于了变量中的值，就用该该变量记录较大值。 </span></span><br><span class="line"><span class="comment">	 * 3. 当所有的元素都比较完成，那么该变量中存储的就是数组中的最大值了。</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * 步骤： </span></span><br><span class="line"><span class="comment">	 * 1. 定义变量。初始化为数组中任意一个元素即可。 </span></span><br><span class="line"><span class="comment">	 * 2. 通过循环语句对数组进行遍历。 </span></span><br><span class="line"><span class="comment">	 * 3. 在变量过程中定义判断条件，如果遍历到的元素比变量中的元素大，就赋值给该变量。</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * 需要定义一个功能来完成。以便提高复用性。 </span></span><br><span class="line"><span class="comment">	 * 1. 明确结果，数组中的最大元素 int。 </span></span><br><span class="line"><span class="comment">	 * 2. 未知内容：一个数组。int[]</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getMax</span><span class="params">(<span class="type">int</span>[] arr)</span> &#123;</span><br><span class="line">		<span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> arr[<span class="number">0</span>];</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">1</span>; x &lt; arr.length; x++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (arr[x] &gt; max) &#123;</span><br><span class="line">				max = arr[x];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> max;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * 获取最大值的另一种方式。 可不可以将临时变量初始化为0呢？可以。这种方式，其实在初始化为数组中任意一个下标。</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getMax_2</span><span class="params">(<span class="type">int</span>[] arr)</span> &#123;</span><br><span class="line">		<span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">1</span>; x &lt; arr.length; x++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (arr[x] &gt; arr[max])</span><br><span class="line">				max = x;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> arr[max];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * 获取最小值。</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getMin</span><span class="params">(<span class="type">int</span>[] arr)</span> &#123;</span><br><span class="line">		<span class="type">int</span> <span class="variable">min</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">1</span>; x &lt; arr.length; x++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (arr[x] &lt; arr[min]) &#123;</span><br><span class="line">				min = x;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> arr[min];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 获取double类型数组的最大值。因为功能一致，所以定义相同函数名称。以重载形式存在。</span></span><br><span class="line">	<span class="comment">// public static double getMax(double[] arr) &#123;</span></span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	<span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="type">int</span>[] arr = &#123; <span class="number">3</span>, <span class="number">6</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">7</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">10</span> &#125;;</span><br><span class="line">		<span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> getMax(arr);</span><br><span class="line">		System.out.println(<span class="string">&quot;max = &quot;</span> + max); <span class="comment">// 10</span></span><br><span class="line">		<span class="type">int</span> <span class="variable">min</span> <span class="operator">=</span> getMin(arr);</span><br><span class="line">		System.out.println(<span class="string">&quot;min = &quot;</span> + min); <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">		<span class="type">boolean</span>[] ar = <span class="keyword">new</span> <span class="title class_">boolean</span>[<span class="number">3</span>];</span><br><span class="line">		System.out.println(ar[<span class="number">1</span>]); <span class="comment">// false</span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
 <p>3.排序（详细算法请见我的博客<a target="_blank" rel="noopener" href="https://mathsion.xyz/2022/06/26/Sorting%20algorithm/#more">排序算法</a>）</p>
 <p>4.二分查找</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">数组的查找操作。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">练习：有一个有序的数组，想要将一个元素插入到该数组中，</span></span><br><span class="line"><span class="comment">还要保证该数组是有序的。如何获取该元素在数组中的位置。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="type">int</span>[] arr = &#123; <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span>, <span class="number">12</span>, <span class="number">14</span>, <span class="number">16</span> &#125;;</span><br><span class="line">		<span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> getIndex(arr, <span class="number">2</span>);</span><br><span class="line">		System.out.println(<span class="string">&quot;index = &quot;</span> + index); <span class="comment">// 0</span></span><br><span class="line">		<span class="type">int</span> <span class="variable">index1</span> <span class="operator">=</span> halfSearch(arr, <span class="number">32</span>);</span><br><span class="line">		System.out.println(<span class="string">&quot;index1 = &quot;</span> + index1); <span class="comment">// -1</span></span><br><span class="line">		<span class="type">int</span> <span class="variable">index2</span> <span class="operator">=</span> halfSearch_2(arr, <span class="number">14</span>);</span><br><span class="line">		System.out.println(<span class="string">&quot;index2 = &quot;</span> + index2); <span class="comment">// 6</span></span><br><span class="line">		<span class="type">int</span> <span class="variable">index3</span> <span class="operator">=</span> getIndex_2(arr, <span class="number">15</span>); </span><br><span class="line">		System.out.println(<span class="string">&quot;index3 = &quot;</span> + index3); <span class="comment">// 7</span></span><br><span class="line"></span><br><span class="line">		<span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> Arrays.binarySearch(arr, <span class="number">11</span>); <span class="comment">// Java提供好的一个进行折半查找的功能。开始时使用这个。</span></span><br><span class="line">		System.out.println(<span class="string">&quot;x = &quot;</span> + x); <span class="comment">// -插入点 - 1 = -6</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getIndex_2</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> key)</span> &#123;</span><br><span class="line">		<span class="type">int</span> <span class="variable">min</span> <span class="operator">=</span> <span class="number">0</span>, max = arr.length - <span class="number">1</span>, mid;</span><br><span class="line">		<span class="keyword">while</span> (min &lt;= max) &#123;</span><br><span class="line">			mid = (max + min) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">if</span> (key &gt; arr[mid])</span><br><span class="line">				min = mid + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (key &lt; arr[mid])</span><br><span class="line">				max = mid - <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				<span class="keyword">return</span> mid;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> min;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * 折半的第二种方式。</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">halfSearch_2</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> key)</span> &#123;</span><br><span class="line">		<span class="type">int</span> <span class="variable">min</span> <span class="operator">=</span> <span class="number">0</span>, max = arr.length - <span class="number">1</span>, mid;</span><br><span class="line">		<span class="keyword">while</span> (min &lt;= max) &#123;</span><br><span class="line">			mid = (max + min) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">if</span> (key &gt; arr[mid])</span><br><span class="line">				min = mid + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (key &lt; arr[mid])</span><br><span class="line">				max = mid - <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				<span class="keyword">return</span> mid;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * 折半查找。提高效率，但是必须要保证该数组是有序的数组。</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">halfSearch</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> key)</span> &#123;</span><br><span class="line">		<span class="type">int</span> min, max, mid; <span class="comment">// 小大中</span></span><br><span class="line">		min = <span class="number">0</span>;</span><br><span class="line">		max = arr.length - <span class="number">1</span>;</span><br><span class="line">		mid = (max + min) / <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span> (arr[mid] != key) &#123;</span><br><span class="line">			<span class="keyword">if</span> (key &gt; arr[mid]) &#123;</span><br><span class="line">				min = mid + <span class="number">1</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (key &lt; arr[mid]) &#123;</span><br><span class="line">				max = mid - <span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (min &gt; max) &#123;</span><br><span class="line">				<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			mid = (max + min) / <span class="number">2</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> mid;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 定义功能，获取key第一次出现在数组中的位置。如果返回是-1，那么代表该key在数组中不存在。</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getIndex</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> key)</span> &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">0</span>; x &lt; arr.length; x++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (arr[x] == key) &#123;</span><br><span class="line">				<span class="keyword">return</span> x;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="（五）二维数组"><a href="#（五）二维数组" class="headerlink" title="（五）二维数组"></a>（五）二维数组</h3><table>
+<h3 id="（五）二维数组"><a href="#（五）二维数组" class="headerlink" title="（五）二维数组"></a>（五）二维数组</h3><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>格式</th>
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>int[][] arr = new int[3][2]</td>
 <td>定义了名称为arr的二维数组；二维数组中有3个一维数组；每个一维数组中有2个元素；一维数组的名称分别为arr[0],arr[1],arr[2]；给第一个一维数组1角标赋值为78的写法是：arr[0][1]=78.</td>
 </tr>
@@ -1094,7 +1182,9 @@
 <td>int[]arr = { {3,8,2},{2,7},{9,0,1,6} }</td>
 <td>定义一个名称为arr的二维数组；二维数组中有三个一维数组；每一个一维数组中具体元素也都已初始化；</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>注意特殊写法情况：int[] x,y[];      x是一维数组，y是二维数组。</p>
 <h1 id="第三章-面向对象"><a href="#第三章-面向对象" class="headerlink" title="第三章 面向对象"></a>第三章 面向对象</h1><h2 id="一、面向对象的概念"><a href="#一、面向对象的概念" class="headerlink" title="一、面向对象的概念"></a>一、面向对象的概念</h2><h3 id="（一）理解面向对象"><a href="#（一）理解面向对象" class="headerlink" title="（一）理解面向对象"></a>（一）理解面向对象</h3><ul>
 <li>面向对象是相对面向过程而言</li>
@@ -1139,7 +1229,6 @@
 <li>对象即是该类事物实实在在存在的个体。</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	人开门：名词提炼法。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">人&#123;</span><br><span class="line">	开门(门)&#123;</span><br><span class="line">		门.开():</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">门&#123;</span><br><span class="line">	开()&#123;</span><br><span class="line">		操作门轴等。</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h3 id="（一）类的定义"><a href="#（一）类的定义" class="headerlink" title="（一）类的定义"></a>（一）类的定义</h3><ul>
 <li>生活中描述事物无非就是描述事物的<strong>属性</strong>和<strong>行为</strong>。<ul>
 <li>如：人有身高，体重等属性，有说话，打球等行为。</li>
@@ -1168,7 +1257,6 @@
 </li>
 </ul>
 <h3 id="（三）创建对象，使用对象"><a href="#（三）创建对象，使用对象" class="headerlink" title="（三）创建对象，使用对象"></a>（三）创建对象，使用对象</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//举例</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Car</span> &#123; <span class="comment">// 对Car这类事物进行描述</span></span><br><span class="line">	<span class="type">String</span> <span class="variable">color</span> <span class="operator">=</span> <span class="string">&quot;red&quot;</span>;</span><br><span class="line">	<span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> <span class="number">4</span>;</span><br><span class="line">	<span class="keyword">void</span> <span class="title function_">show</span><span class="params">()</span> &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;color = &quot;</span> + color + <span class="string">&quot;..num = &quot;</span> + num); </span><br><span class="line"><span class="comment">// color = black..num = 4</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CarDemo</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="type">demo</span> <span class="variable">c</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">demo</span>(); <span class="comment">// 建立对象</span></span><br><span class="line">		c.color = <span class="string">&quot;black&quot;</span>; <span class="comment">// 对象的属性进行修改</span></span><br><span class="line">		c.show(); <span class="comment">// 使用对象的功能。</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h3 id="（四）匿名对象"><a href="#（四）匿名对象" class="headerlink" title="（四）匿名对象"></a>（四）匿名对象</h3><ul>
 <li>匿名对象是对象的简化形式</li>
 <li>匿名对象两种使用情况<ul>
@@ -1178,7 +1266,6 @@
 </li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Car</span>().run();<span class="comment">//匿名对象的使用方法</span></span><br></pre></td></tr></table></figure>
-
 <h2 id="三、封装（Encapsulation）"><a href="#三、封装（Encapsulation）" class="headerlink" title="三、封装（Encapsulation）"></a>三、封装（<strong><strong>Encapsulation</strong></strong>）</h2><ul>
 <li>封装：是指隐藏对象的属性和实现细节，仅对外提供公共访问方式。</li>
 <li>好处：<ul>
@@ -1207,7 +1294,6 @@
 </li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">**<span class="comment">//应用举例**</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 将age私有化以后，类以外即使建立了对象也不能直接访问。</span></span><br><span class="line"><span class="comment"> * 但是人应该有年龄，就需要在Person类提供对应访问age的方式。</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 注意：私有仅仅是封装的一种表现形式。</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 之所以对外提供访问方式，就因为可以在访问方式中加入逻辑判断等语句。</span></span><br><span class="line"><span class="comment"> * 对访问的数据进行操作。提高代码健壮性。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setAge</span><span class="params">(<span class="type">int</span> a)</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> (a &gt; <span class="number">0</span> &amp;&amp; age &lt; <span class="number">130</span>) &#123;</span><br><span class="line">			age = a;</span><br><span class="line">			speak();</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;非法年龄&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getAge</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">void</span> <span class="title function_">speak</span><span class="params">()</span> &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;age = &quot;</span> + age);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">PersonDemo</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="type">Person</span> <span class="variable">p</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line">		<span class="comment">// p.age = -20;</span></span><br><span class="line">		p.setAge(<span class="number">20</span>); <span class="comment">// age = 20</span></span><br><span class="line">		p.setAge(-<span class="number">20</span>); <span class="comment">// 非法年龄</span></span><br><span class="line">		<span class="comment">// p.speak();</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h2 id="五、构造函数"><a href="#五、构造函数" class="headerlink" title="五、构造函数"></a>五、构造函数</h2><ul>
 <li>构造函数：<ul>
 <li>构建，创建对象时调用的函数</li>
@@ -1232,7 +1318,6 @@
 </li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造函数举例</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>&#123;</span><br><span class="line">	Person()&#123;<span class="comment">//构造函数，空参数，可以有参数</span></span><br><span class="line">		<span class="comment">//内容</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//使用构造函数的例子</span></span><br><span class="line">**<span class="type">Person</span> <span class="variable">P</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>();**<span class="comment">//属性最好放在构造函数中。</span></span><br><span class="line">P.speak();</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>一般函数与构造函数的区别：<ul>
 <li>构造函数：<ul>
@@ -1259,10 +1344,8 @@
 </li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//应用举例</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">Person</span><span class="params">(<span class="type">int</span> age)</span> &#123;</span><br><span class="line">		<span class="built_in">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">Person</span><span class="params">(String name)</span> &#123;</span><br><span class="line">		<span class="built_in">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">Person</span><span class="params">(String name, <span class="type">int</span> age)</span> &#123;</span><br><span class="line">		**<span class="built_in">this</span>.name = name;</span><br><span class="line">		<span class="built_in">this</span>.age = age;**</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">speak</span><span class="params">()</span> &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;name = &quot;</span> + <span class="built_in">this</span>.name + <span class="string">&quot;..age = &quot;</span> + <span class="built_in">this</span>.age);</span><br><span class="line">		show();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">show</span><span class="params">()</span> &#123;</span><br><span class="line">		System.out.println(<span class="built_in">this</span>.name);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>this关键字在构造函数间的调用</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//应用举例</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * this语句：用于构造函数之间进行互相调用。</span></span><br><span class="line"><span class="comment"> * this语句只能定义在构造函数的第一行。因为初始化要先执行。</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line"></span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;code run&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	Person() &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;person run&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	Person(String name) &#123;</span><br><span class="line">		<span class="built_in">this</span>();</span><br><span class="line">		<span class="built_in">this</span>.name = <span class="string">&quot;haha&quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	Person(String name, <span class="type">int</span> age) &#123;</span><br><span class="line">		**<span class="built_in">this</span>(name);** <span class="comment">// p(name)      this.name = name;</span></span><br><span class="line">		<span class="built_in">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">speak</span><span class="params">()</span> &#123;</span><br><span class="line">		System.out.println(name + <span class="string">&quot;..&quot;</span> + age);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p><strong>在本类中用到本类的对象，一般都用this</strong></p>
 <h2 id="七、static-静态-关键词"><a href="#七、static-静态-关键词" class="headerlink" title="七、static(静态)关键词"></a>七、static(静态)关键词</h2><ul>
 <li>static关键字：<ul>
@@ -1344,7 +1427,6 @@
 <li>静态代码块和构造代码块</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span>&#123;<span class="comment">//随着类的加载而执行，而且只执行一次，并优先于主函数</span></span><br><span class="line">	<span class="comment">//静态代码块中的执行语句</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//作用：用于给类进行初始化</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//构造代码块</span></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//可以给所有对象初始化，构造函数是给对应的对象进行针对性的初始化</span></span><br><span class="line"><span class="comment">//局部代码块：限定局部变量的生命周期</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//举例：</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">StaticCode</span> &#123;</span><br><span class="line">	<span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> <span class="number">9</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">StaticCode</span><span class="params">()</span> &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;b&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">static</span> &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;a&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;c&quot;</span> + <span class="built_in">this</span>.num);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	StaticCode(<span class="type">int</span> x) &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;d&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">show</span><span class="params">()</span> &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;show run&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">StaticCodeDemo</span> &#123;</span><br><span class="line">	<span class="keyword">static</span> &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;b&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">new</span> <span class="title class_">StaticCode</span>();</span><br><span class="line">		<span class="keyword">new</span> <span class="title class_">StaticCode</span>();</span><br><span class="line">		System.out.println(<span class="string">&quot;over&quot;</span>); </span><br><span class="line">		StaticCode.show();</span><br><span class="line">		<span class="type">StaticCode</span> <span class="variable">a</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">		a = <span class="keyword">new</span> <span class="title class_">StaticCode</span>();</span><br><span class="line">		<span class="keyword">new</span> <span class="title class_">StaticCode</span>(<span class="number">4</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">static</span> &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;c&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//输出</span></span><br><span class="line">b</span><br><span class="line">c</span><br><span class="line">a</span><br><span class="line">c9</span><br><span class="line">b</span><br><span class="line">c9</span><br><span class="line">b</span><br><span class="line">over</span><br><span class="line">show run</span><br><span class="line">c9</span><br><span class="line">b</span><br><span class="line">c9</span><br><span class="line">d</span><br></pre></td></tr></table></figure>
-
 <h2 id="八、主函数"><a href="#八、主函数" class="headerlink" title="八、主函数"></a>八、主函数</h2><p><strong>public static void main(String[] args){}</strong></p>
 <ul>
 <li>主函数的特殊之处：<ul>

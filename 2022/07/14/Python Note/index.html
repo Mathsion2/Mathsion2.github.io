@@ -261,13 +261,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Python-Notes"><a href="#Python-Notes" class="headerlink" title="Python Notes"></a>Python Notes</h1><p><font color="purple" size=3>来源：Mathsion</font></p>
-<span id="more"></span>
-
+        <h1 id="Python-Notes"><a href="#Python-Notes" class="headerlink" title="Python Notes"></a>Python Notes</h1><p><font color="purple" size=3>来源：Mathsion</font><br><span id="more"></span></p>
 <h2 id="一、基本语法"><a href="#一、基本语法" class="headerlink" title="一、基本语法"></a>一、基本语法</h2><p>1.复数类型表示：虚数部分使用后缀<strong>“j”</strong>或<strong>“J”</strong>，如1+2j。实部和虚部都是浮点类型。分别获取实数部分和虚数部分使用：<strong>z.real</strong>，<strong>z.imag</strong></p>
 <p>2.print函数自带换行功能，如果不需要换行则在实参中添加<strong>end=’’</strong>。</p>
 <p>3.<strong>x//y</strong>表示x/y的整数商，即不大于x/y的最大整数；<strong>x**y</strong> 表示x的y次幂，即$x^y$ </p>
 <p>4.内置数值运算函数</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -275,7 +274,8 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>abs(x)</td>
 <td>x的绝对值</td>
 </tr>
@@ -299,7 +299,9 @@
 <td>min(x1,x2,···,xn)</td>
 <td>x1,x2,···,xn的最小值，n没有限定</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>①abs函数甚至可以计算复数的模长</p>
 <p>②pow(3,pow(3,999))%10000先进行求幂运算再进行取余运算，消耗时间长；而使用pow(3,pow(3,999),10000)在求幂运算的同时取余，消耗时间短，但是起到与前面同样的效果。</p>
 <p>5.内置数字类型转换函数</p>
@@ -310,9 +312,9 @@
 <p>②需要使用import引用该库后才能使用其函数。</p>
 <p>③使用方法：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#(1)</span></span><br><span class="line"><span class="keyword">import</span> math <span class="comment">#导入math</span></span><br><span class="line">math.ceil(<span class="number">10.2</span>);<span class="comment">#向上取整</span></span><br><span class="line"><span class="comment">#(2)</span></span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> floor <span class="comment">#只导入math库的floor函数</span></span><br><span class="line">floor(<span class="number">10.2</span>);<span class="comment">#向下取整</span></span><br></pre></td></tr></table></figure>
-
 <p>④</p>
 <p>math库的数学常数（共4个）</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -321,7 +323,8 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>math.pi</td>
 <td>π</td>
 <td>圆周率，值为3.141592653589793</td>
@@ -341,8 +344,11 @@
 <td></td>
 <td>非浮点数标记，NaN（Not a Number）</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>math库的数值表示函数（共16个）</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -351,14 +357,17 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>math.fabs(x)</td>
-<td>$|x|$</td>
+<td>$\</td>
+<td>x\</td>
+<td>$</td>
 <td>返回x的绝对值</td>
 </tr>
 <tr>
 <td>math.fmod(x,y)</td>
-<td>$x%y$</td>
+<td>$x\%y$</td>
 <td>返回x与y的模</td>
 </tr>
 <tr>
@@ -408,7 +417,11 @@
 </tr>
 <tr>
 <td>math.copysign(x,y)</td>
-<td>$|x|×|y|/y$</td>
+<td>$\</td>
+<td>x\</td>
+<td>×\</td>
+<td>y\</td>
+<td>/y$</td>
 <td>用数值y的正负号替换数值x的正负号</td>
 </tr>
 <tr>
@@ -431,8 +444,11 @@
 <td></td>
 <td>当x是NaN，返回True；否则，返回False</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>math库的幂对数函数（共8个）</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -441,7 +457,8 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>math.pow(x,y)</td>
 <td>$x^y$</td>
 <td>返回x的y次幂</td>
@@ -481,8 +498,11 @@
 <td>$log_{10}x$</td>
 <td>返回x的10对数值</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>math库的三角函数运算函数（共16个）</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -491,7 +511,8 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>math.degrees(x)</td>
 <td></td>
 <td>弧度x的弧度值转角度值</td>
@@ -571,8 +592,11 @@
 <td>$arctanh\ x$</td>
 <td>返回x的反双曲正切函数值</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>math库的高等特殊函数（共4个）</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -581,7 +605,8 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>math.erf(x)</td>
 <td>$\frac{2}{\sqrt{\pi}} \int_0^x e^{-t^2}dt$</td>
 <td>高斯误差函数，应用于概率论、统计学等领域</td>
@@ -604,13 +629,14 @@
 <tr>
 <td></td>
 <td></td>
-<td></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>7.字符串类型</p>
 <p>①三引号(“‘)，其中可以使用双引号，单引号，甚至换行。</p>
 <p>②input()可以获取用户输入，并且储存为字符串类型，input(string);其中的string可以作为用户输入的提示语句。print()函数则可以直接打印字符串。</p>
-<p>③字符串包括两种序号体系：(1)正向递增序号：0<del>L-1 (2)反向递减序号：-L</del>-1</p>
+<p>③字符串包括两种序号体系：(1)正向递增序号：0~L-1 (2)反向递减序号：-L~-1</p>
 <p>④提供区间访问方式：[N:M]表示从N到M(不包含M)的子串</p>
 <p>⑤使用Unicode编码，中文英文字符都算作1个字符</p>
 <p>⑥字符串操作符</p>
@@ -620,6 +646,7 @@
 <p>(4)str[N:M]：返回N~M(不包含M)的子串</p>
 <p>⑦eval()函数返回执行的一个字符串表达式的值，例：n=10 num=eval(”n+5”)，则num=15 </p>
 <p>⑧内置字符串处理函数：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -627,7 +654,8 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>len(x)</td>
 <td>返回字符串x的长度，也可返回其他组合数据类型元素个数</td>
 </tr>
@@ -651,8 +679,11 @@
 <td>oct(x)</td>
 <td>返回整数x对应八进制的小写形式字符串</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>⑨字符串类的内置字符串处理方法：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -660,7 +691,8 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>str.lower()</td>
 <td>返回字符串str的副本，全部字符小写</td>
 </tr>
@@ -724,7 +756,9 @@
 <td>str.join(iterable)</td>
 <td>返回一个新字符串，由组合数据类型iterable变量的每个元素组成，元素间用str分隔</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>⑩字符串格式化方法(format)：</p>
 <p>(1)&lt;模板字符串&gt;.format(str1,str2,…)，其中模板字符串中需要进行修改的部分使用{}(槽)</p>
 <p>例：”{}：计算机{}的CPU占用率为{}%”.format(”2016-12-31”,”PYTHON”,10)</p>
@@ -742,22 +776,16 @@
 <p>8.基本语句</p>
 <p>（1）条件语句</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#格式1</span></span><br><span class="line"><span class="keyword">if</span> Boolean expression:</span><br><span class="line">	block of code</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	block of code</span><br><span class="line"></span><br><span class="line"><span class="comment">#格式2</span></span><br><span class="line"><span class="keyword">if</span> Boolean expression:</span><br><span class="line">	block of code</span><br><span class="line"><span class="keyword">elif</span> Boolean expression:</span><br><span class="line">	block of code</span><br><span class="line">...</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	block of code</span><br></pre></td></tr></table></figure>
-
 <p>（2）输入输出语句</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">变量名 = <span class="built_in">input</span>(<span class="string">&#x27;提示信息&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>()</span><br></pre></td></tr></table></figure>
-
 <p>（3）循环语句</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#while语句</span></span><br><span class="line"><span class="keyword">while</span>(boolean expression):</span><br><span class="line">	block of code</span><br><span class="line"></span><br><span class="line"><span class="comment">#for语句</span></span><br><span class="line"><span class="keyword">for</span> 迭代变量 <span class="keyword">in</span> 序列:</span><br><span class="line">	block of code</span><br></pre></td></tr></table></figure>
-
 <p>（4）杂项</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#break continue语句，用法与其他语言相同，均用于while及for中</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#pass语句#占位语句</span></span><br><span class="line"><span class="comment">#例如：如果定义一个空函数程序会报错，当你没有想好函数的内容是可以用 pass 填充,使程序可以正常运行</span></span><br></pre></td></tr></table></figure>
-
 <h2 id="二、-函数、作用域与抽象"><a href="#二、-函数、作用域与抽象" class="headerlink" title="二、 函数、作用域与抽象"></a>二、 函数、作用域与抽象</h2><p>1.牛顿-拉弗森法求根的近似值</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#利用牛顿-拉弗森法寻找平方根</span></span><br><span class="line"><span class="comment">#寻找x，满足x**2-24在epsilon和0之间</span></span><br><span class="line">epsilon = <span class="number">0.01</span></span><br><span class="line">k=<span class="number">24.0</span></span><br><span class="line">guess = k/<span class="number">2.0</span></span><br><span class="line"><span class="keyword">while</span> <span class="built_in">abs</span>(guess*guess-k) &gt;= epsilon:</span><br><span class="line">	guess = guess-(((guess**<span class="number">2</span>)-k)/(<span class="number">2</span>*guess))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Square root of&#x27;</span>,k,<span class="string">&#x27;is about&#x27;</span>,guess)</span><br></pre></td></tr></table></figure>
-
 <p>2.定义函数的方法：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">name</span>(<span class="params"><span class="built_in">list</span></span>):</span><br><span class="line">		body</span><br></pre></td></tr></table></figure>
-
 <p>return语句会结束对函数的调用，其值为被调用函数返回的值。</p>
 <p>3.将形参绑定到实参的两种方法：</p>
 <p>(1)使用位置参数，即第一个形参绑定到第一个实参，第二个参数绑定到第二个实参，以此类推。</p>
@@ -769,6 +797,7 @@
 <p>4.help(…)可以访问函数中的文档字符串，比如help(abs)；文档字符串是”””…..”””三引号之间的文字；使用文档字符串提供函数规范</p>
 <p>5.模块：一个包含Python定义和语句的.py文件。程序可以通过import语句访问一个模块。使用<strong>点标记法</strong>来引用模块中的变量等；使用from M import *会将M中定义的所有对象绑定到当前作用域(此时不可以再用点标记法)。</p>
 <p>6.常用的文件操作：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -776,7 +805,8 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>open(fn,’w’)</td>
 <td>fn是一个表示文件名的字符串。创建一个文件用来写入数据，返回文件句柄。</td>
 </tr>
@@ -812,17 +842,17 @@
 <td>fh.close()</td>
 <td>关闭与文件句柄fh相关的文件。</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h2 id="三、-结构化类型、可变性与高阶函数"><a href="#三、-结构化类型、可变性与高阶函数" class="headerlink" title="三、 结构化类型、可变性与高阶函数"></a>三、 结构化类型、可变性与高阶函数</h2><h3 id="1-元组tuple-（一些元素的不可变有序序列）"><a href="#1-元组tuple-（一些元素的不可变有序序列）" class="headerlink" title="1.元组tuple   （一些元素的不可变有序序列）"></a>1.元组tuple   （一些元素的不可变有序序列）</h3><p>（1）其中的单个元素可以是任意类型，彼此之间类型也可以不相同</p>
 <p>（2）定义形式：t1 = (1,’two’,3)  用逗号隔开</p>
 <p>（3）定义单元素元组，例如：t = (1,)。一定要加逗号。</p>
 <p>（4）元组甚至可以嵌套，t1=(1,’two’,3)  t2=(t1,3.14)=((1,’two’,3),3.14)</p>
 <p>（5）元组可以进行连接、索引和切片操作，例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">t1 = (<span class="number">1</span>,<span class="string">&#x27;two&#x27;</span>,<span class="number">3</span>)</span><br><span class="line">t2 = (t1,<span class="number">3.25</span>)</span><br><span class="line"><span class="built_in">print</span>(t2)</span><br><span class="line"><span class="built_in">print</span>(t1+t2)<span class="comment">#连接</span></span><br><span class="line"><span class="built_in">print</span>((t1+t2)[<span class="number">3</span>])<span class="comment">#索引</span></span><br><span class="line"><span class="built_in">print</span>((t1+t2)[<span class="number">2</span>:<span class="number">5</span>])<span class="comment">#切片</span></span><br></pre></td></tr></table></figure>
-
 <p>（6）序列与多重赋值：已知一个序列(元组字符串)的长度可方便地提取单个元素；多重赋值，例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x,y=(<span class="number">3</span>,<span class="number">4</span>)<span class="comment">#将x绑定到3，将y绑定到4</span></span><br></pre></td></tr></table></figure>
-
 <h3 id="2-范围range"><a href="#2-范围range" class="headerlink" title="2.范围range"></a>2.范围range</h3><p>（1）范围不可变，range函数会返回一个range类型的对象</p>
 <p>（2）range函数接受3个整数参数：start、stop和step。最后一个元素是start+i×step，至于与stop的大小关系需要讨论step的正负。</p>
 <h3 id="3-列表list"><a href="#3-列表list" class="headerlink" title="3.列表list"></a>3.列表list</h3><p>（1）使用中括号[]；单元素列表不需要加逗号。</p>
@@ -831,6 +861,7 @@
 <p>（4）append方法可以向列表的末尾添加一个新元素，例：list1.append(’AA’)。使用append将一个列表追加到另一个列表时，会保持原来的结构，即结果是一个包含列表的列表。</p>
 <p>（5）可以使用列表连接操作或extend方法来将一个列表追加到另一个列表，此方法不会保持原来的结构，即结果只是一个列表。而列表连接操作’+‘会创建并返回一个新的列表，而extend和append会改变原有的列表。</p>
 <p>（6）列表相关操作</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -838,7 +869,8 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>L.append(e)</td>
 <td>将对象e追加到L的末尾</td>
 </tr>
@@ -874,7 +906,9 @@
 <td>L.reverse()</td>
 <td>翻转L中的元素顺序</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>（7）克隆</p>
 <p>①切片操作克隆列表。使用for e1 in L1[:]的写法。</p>
 <blockquote>
@@ -885,27 +919,23 @@
 <p>（8）列表推导</p>
 <p>列表推导式可以将某种操作应用到序列中的一个值上。会创建一个新的列表，其中的每个元素都是一个序列中的值应用到给定操作后的结果。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">L = [x**<span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">7</span>)]</span><br><span class="line"><span class="built_in">print</span>(L)</span><br><span class="line"><span class="comment">#输出：[1，4，9，16，25，36]</span></span><br></pre></td></tr></table></figure>
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mixed = [<span class="number">1</span>,<span class="number">2</span>,<span class="string">&#x27;a&#x27;</span>,<span class="number">3</span>,<span class="number">4.0</span>]</span><br><span class="line"><span class="built_in">print</span>([x**<span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> mixed <span class="keyword">if</span> <span class="built_in">type</span>(x)==<span class="built_in">int</span>])</span><br><span class="line"><span class="comment">#type可以获取该元素的类型</span></span><br><span class="line"><span class="comment">#输出：[1,4,9]</span></span><br><span class="line"><span class="comment">#for从句后面可以有一个或多个if语句和for语句，可以应用到for子句产生的值。</span></span><br><span class="line"><span class="comment">#这些附加从句可以修改第一个for从句生成的序列中的值，并产生一个新的序列。</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="4-函数对象"><a href="#4-函数对象" class="headerlink" title="4.函数对象"></a>4.函数对象</h3><p>（1）type(abs)的值为：&lt;class ‘builtin_function_or_method’&gt;；函数可以出现在表达式中，例如作为赋值语句的右侧项或作为函数的实参；函数也可以是列表中的元素。</p>
+<h3 id="4-函数对象"><a href="#4-函数对象" class="headerlink" title="4.函数对象"></a>4.函数对象</h3><p>（1）type(abs)的值为：<class 'builtin_function_or_method'>；函数可以出现在表达式中，例如作为赋值语句的右侧项或作为函数的实参；函数也可以是列表中的元素。</p>
 <p>（2）使用函数作为实参可以实现<strong>高阶编程</strong>的编码方式。常与列表结合使用。</p>
 <p>（3）Python内置了高阶函数map，与for循环结合使用。</p>
 <p>最简形式：map(一元函数,有序值的集合)，作用类似range函数。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#应用举例</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">map</span>(<span class="built_in">abs</span>,[<span class="number">2</span>,-<span class="number">6</span>,-<span class="number">4</span>]):</span><br><span class="line">	<span class="built_in">print</span>(i)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出：2 6 4</span></span><br></pre></td></tr></table></figure>
-
 <p>更一般的形式：map(具有n个参数的函数，L1,L2,···,Ln)。要求L1-Ln集合的长度相同。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#应用举例</span></span><br><span class="line">L1 = [<span class="number">1</span>,<span class="number">28</span>,<span class="number">36</span>]</span><br><span class="line">L2 = [<span class="number">2</span>,<span class="number">57</span>,<span class="number">9</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">map</span>(<span class="built_in">min</span>,L1,L2):</span><br><span class="line">	<span class="built_in">print</span>(i)</span><br><span class="line"><span class="comment">#输出：1 28 9</span></span><br></pre></td></tr></table></figure>
-
 <p>（4）支持创建<strong>匿名函数</strong>。需要使用关键字lambda</p>
 <p>lambda表达式的一般形式：lambda <sequence of variable names>: <expression></p>
 <p>举例：lambda x,y: x*y 会返回一个函数，这个函数的返回值为两个参数的乘积。</p>
 <p>Lambda表达式经常用作高阶函数的实参。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#应用举例</span></span><br><span class="line">L = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">map</span>(<span class="keyword">lambda</span> x,y: x*y,[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">0</span>]):</span><br><span class="line">	L.append(i)</span><br><span class="line"><span class="built_in">print</span>(L)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出：[1,4,3,1]</span></span><br></pre></td></tr></table></figure>
-
 <h3 id="5-字符串、元组、范围与列表总结"><a href="#5-字符串、元组、范围与列表总结" class="headerlink" title="5.字符串、元组、范围与列表总结"></a>5.字符串、元组、范围与列表总结</h3><ul>
 <li>序列类型的通用操作</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -913,7 +943,8 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>seq[i]</td>
 <td>返回序列中的第i个元素</td>
 </tr>
@@ -945,10 +976,13 @@
 <td>for e in seq</td>
 <td>遍历序列中的元素</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <ul>
 <li>序列类型对比</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -958,7 +992,8 @@
 <th>是否可变</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>str</td>
 <td>字符型</td>
 <td>‘ ‘、‘a、’abc’</td>
@@ -982,16 +1017,17 @@
 <td>[]、[3]、[’abc’,4]</td>
 <td>是</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h3 id="6-字典-dict"><a href="#6-字典-dict" class="headerlink" title="6.字典(dict)"></a>6.字典(dict)</h3><p>（1）字典使用<strong>键</strong>对其中的值进行引用，可以将字典看作一个<strong>键/值对</strong>的集合</p>
 <p>（2）字典类型的字面量用<strong>大括号</strong>表示，其中的元素写法是<strong>键加冒号再加上值</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#应用举例</span></span><br><span class="line">monthNumbers = &#123;<span class="string">&#x27;Jan&#x27;</span>:<span class="number">1</span>,<span class="string">&#x27;Feb&#x27;</span>:<span class="number">2</span>,<span class="string">&#x27;Mar&#x27;</span>:<span class="number">3</span>,<span class="string">&#x27;Apr&#x27;</span>:<span class="number">4</span>,<span class="string">&#x27;May&#x27;</span>:<span class="number">5</span>,</span><br><span class="line">								<span class="number">1</span>:<span class="string">&#x27;Jan&#x27;</span>,<span class="number">2</span>:<span class="string">&#x27;Feb&#x27;</span>,<span class="number">3</span>:<span class="string">&#x27;Mar&#x27;</span>,<span class="number">4</span>:<span class="string">&#x27;Apr&#x27;</span>,<span class="number">5</span>:<span class="string">&#x27;May&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;The third month is &#x27;</span>+ monthNumber[<span class="number">3</span>])</span><br><span class="line">dist = monthNumbers[<span class="string">&#x27;Apr&#x27;</span>] - monthNumbers[<span class="string">&#x27;Jan&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Apr and Jan are&#x27;</span>,dist,<span class="string">&#x27;months apart&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出：The third month is Mar</span></span><br><span class="line"><span class="comment">#     Apr and Jan are 3 months apart</span></span><br></pre></td></tr></table></figure>
-
 <p>（3）字典中的项目是无序的，不能通过索引引用。</p>
 <p>（4）和列表相同，字典是可变的</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#增加一个项目</span></span><br><span class="line">monthNumbers[<span class="string">&#x27;June&#x27;</span>]=<span class="number">6</span></span><br><span class="line"><span class="comment">#修改一个项目 </span></span><br><span class="line">monthNumbers[<span class="string">&#x27;May&#x27;</span>]=<span class="string">&#x27;V&#x27;</span></span><br></pre></td></tr></table></figure>
-
 <p>（5）常用的字典操作</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -999,7 +1035,8 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>len(d)</td>
 <td>返回d中项目的数量</td>
 </tr>
@@ -1035,14 +1072,15 @@
 <td>for k in d</td>
 <td>遍历d中的键</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h2 id="四、异常"><a href="#四、异常" class="headerlink" title="四、异常"></a>四、异常</h2><ul>
 <li>常见的异常：TypeError、IndexError、NameError、ValueError</li>
 </ul>
 <h3 id="1-处理异常"><a href="#1-处理异常" class="headerlink" title="1.处理异常"></a>1.处理异常</h3><p>（1）程序因为一个异常被抛出而终止时，称为抛出了一个<strong>未处理异常</strong>。但实际上，异常并没有必要导致程序终止，其被抛出时，也可以由程序进行处理。</p>
 <p>（2）处理异常的方式：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#处理异常的语法</span></span><br><span class="line"><span class="comment">#格式1</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	&lt;语句&gt;        <span class="comment">#运行别的代码</span></span><br><span class="line"><span class="keyword">except</span> &lt;异常<span class="number">1</span>&gt;：</span><br><span class="line">	&lt;语句&gt;        <span class="comment">#如果在try部份引发了&#x27;异常1&#x27;异常</span></span><br><span class="line"><span class="keyword">except</span> &lt;异常<span class="number">2</span>&gt;，&lt;数据&gt;:</span><br><span class="line">	&lt;语句&gt;        <span class="comment">#如果引发了&#x27;异常2&#x27;异常，获得附加的数据</span></span><br><span class="line"><span class="keyword">except</span>:<span class="comment">#如果写了这一句，无论抛出何种异常都会进入该代码块</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	&lt;语句&gt;        <span class="comment">#如果没有异常发生</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#格式2</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    正常的操作</span><br><span class="line">   ......................</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    发生异常，执行这块代码</span><br><span class="line">   ......................</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    如果没有异常执行这块代码</span><br><span class="line"></span><br><span class="line"><span class="comment">#格式3</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    正常的操作</span><br><span class="line">   ......................</span><br><span class="line"><span class="keyword">except</span>(Exception1[, Exception2[,...ExceptionN]]):</span><br><span class="line">   发生以上多个异常中的一个，执行这块代码</span><br><span class="line">   ......................</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    如果没有异常执行这块代码、</span><br><span class="line"></span><br><span class="line"><span class="comment">#格式4</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	&lt;语句&gt;</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">	&lt;语句&gt;    <span class="comment">#退出try时总会执行</span></span><br><span class="line"><span class="keyword">raise</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>对于格式1<ul>
 <li>如果当try后的语句执行时发生异常，python就跳回到try并执行第一个匹配该异常的except子句，异常处理完毕，控制流就通过整个try语句（除非在处理异常时又引发新的异常）。</li>
@@ -1056,13 +1094,10 @@
 </li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#应用举例</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	successFailureRatio = numSuccesses/NumFailures</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;The success/failure ratio is&#x27;</span>,successFailureRatio)</span><br><span class="line"><span class="keyword">except</span> ZeroDicisionError:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;No failures,so the success/failure ratio is undefined.&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Now here&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
 <h3 id="2-将异常用作控制流"><a href="#2-将异常用作控制流" class="headerlink" title="2.将异常用作控制流"></a>2.将异常用作控制流</h3><p>raise语句：强制引发一个特定的异常</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">raise</span> 异常名称(参数列表)</span><br></pre></td></tr></table></figure>
-
 <h3 id="3-断言"><a href="#3-断言" class="headerlink" title="3.断言"></a>3.断言</h3><p>assert语句：确保程序状态股和预期，确保函数参数具有恰当的类型，确保中间值符合预期，确保函数返回一个可接受的值</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#格式1</span></span><br><span class="line"><span class="keyword">assert</span> Boolean expression</span><br><span class="line"></span><br><span class="line"><span class="comment">#格式2</span></span><br><span class="line"><span class="keyword">assert</span> Boolean expression,argument</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>执行assert语句时，先对布尔表达式求值<ul>
 <li>True：向下执行</li>

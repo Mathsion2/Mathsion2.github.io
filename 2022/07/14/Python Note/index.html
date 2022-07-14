@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Python Notes来源：Mathsion">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Note">
+<meta property="og:url" content="http://example.com/2022/07/14/Python%20Note/index.html">
+<meta property="og:site_name" content="Mathsion">
+<meta property="og:description" content="Python Notes来源：Mathsion">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-14T13:01:04.000Z">
+<meta property="article:modified_time" content="2022-07-14T13:18:46.655Z">
+<meta property="article:author" content="Wong Mathsion">
+<meta property="article:tag" content="Computer science">
+<meta property="article:tag" content="Programming language">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2022/07/14/Python%20Note/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Note | Mathsion</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Mathsion</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">follow my heart</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>所有博客</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/14/Python%20Note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Mathsion.jpg">
+      <meta itemprop="name" content="Wong Mathsion">
+      <meta itemprop="description" content="坚持为美好的东西而努力，不为失败或得不到而焦虑。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mathsion">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Note
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-07-14 21:01:04 / 修改时间：21:18:46" itemprop="dateCreated datePublished" datetime="2022-07-14T21:01:04+08:00">2022-07-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Study/" itemprop="url" rel="index"><span itemprop="name">Study</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Study/Computer-science/" itemprop="url" rel="index"><span itemprop="name">Computer science</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2022/07/14/Python%20Note/" class="post-meta-item leancloud_visitors" data-flag-title="Note" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/07/14/Python%20Note/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/07/14/Python%20Note/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Python-Notes"><a href="#Python-Notes" class="headerlink" title="Python Notes"></a>Python Notes</h1><p><font color="purple" size=3>来源：Mathsion</font></p>
+<span id="more"></span>
+
+<h2 id="一、基本语法"><a href="#一、基本语法" class="headerlink" title="一、基本语法"></a>一、基本语法</h2><p>1.复数类型表示：虚数部分使用后缀<strong>“j”</strong>或<strong>“J”</strong>，如1+2j。实部和虚部都是浮点类型。分别获取实数部分和虚数部分使用：<strong>z.real</strong>，<strong>z.imag</strong></p>
+<p>2.print函数自带换行功能，如果不需要换行则在实参中添加<strong>end=’’</strong>。</p>
+<p>3.<strong>x//y</strong>表示x/y的整数商，即不大于x/y的最大整数；<strong>x</strong>y**表示x的y次幂，即$x^y$</p>
+<p>4.内置数值运算函数</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>abs(x)</td>
+<td>x的绝对值</td>
+</tr>
+<tr>
+<td>divmod(x,y)</td>
+<td>(x//y,x%y)，输出为二元组形式（也称为元组类型）</td>
+</tr>
+<tr>
+<td>pow(x,y[,z])</td>
+<td>(x**y)%z，[..]表示该参数可以省略</td>
+</tr>
+<tr>
+<td>round(x[,ndigitis])</td>
+<td>对x四舍五入，保留ndigits位小数。round(x)返回四舍五入的整数值</td>
+</tr>
+<tr>
+<td>max(x1,x2,···,xn)</td>
+<td>x1,x2,···,xn的最大值，n没有限定</td>
+</tr>
+<tr>
+<td>min(x1,x2,···,xn)</td>
+<td>x1,x2,···,xn的最小值，n没有限定</td>
+</tr>
+</tbody></table>
+<p>①abs函数甚至可以计算复数的模长</p>
+<p>②pow(3,pow(3,999))%10000先进行求幂运算再进行取余运算，消耗时间长；而使用pow(3,pow(3,999),10000)在求幂运算的同时取余，消耗时间短，但是起到与前面同样的效果。</p>
+<p>5.内置数字类型转换函数</p>
+<p>①**complex(re[,im]);**生成一个实部为re，虚部为im的复数；re可为整数，浮点数甚至字符串，但im可为整数，浮点数，但不能为字符串。 </p>
+<p>②不可以将复数直接通过int()，float()函数转化，需要对其实部和虚部进行转化来间接转化复数。</p>
+<p>6.math库</p>
+<p>①math库不支持复数类型，只支持整数和浮点类型</p>
+<p>②需要使用import引用该库后才能使用其函数。</p>
+<p>③使用方法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#(1)</span></span><br><span class="line"><span class="keyword">import</span> math <span class="comment">#导入math</span></span><br><span class="line">math.ceil(<span class="number">10.2</span>);<span class="comment">#向上取整</span></span><br><span class="line"><span class="comment">#(2)</span></span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> floor <span class="comment">#只导入math库的floor函数</span></span><br><span class="line">floor(<span class="number">10.2</span>);<span class="comment">#向下取整</span></span><br></pre></td></tr></table></figure>
+
+<p>④</p>
+<p>math库的数学常数（共4个）</p>
+<table>
+<thead>
+<tr>
+<th>常数</th>
+<th>数学表示</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>math.pi</td>
+<td>π</td>
+<td>圆周率，值为3.141592653589793</td>
+</tr>
+<tr>
+<td>math.e</td>
+<td>e</td>
+<td>自然对数，值为2.718281828459045</td>
+</tr>
+<tr>
+<td>math.inf</td>
+<td>∞</td>
+<td>正无穷大，负无穷大为-math.inf</td>
+</tr>
+<tr>
+<td>math.nan</td>
+<td></td>
+<td>非浮点数标记，NaN（Not a Number）</td>
+</tr>
+</tbody></table>
+<p>math库的数值表示函数（共16个）</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>数学表示</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>math.fabs(x)</td>
+<td>$|x|$</td>
+<td>返回x的绝对值</td>
+</tr>
+<tr>
+<td>math.fmod(x,y)</td>
+<td>$x%y$</td>
+<td>返回x与y的模</td>
+</tr>
+<tr>
+<td>math.fsum([x,y,…])</td>
+<td>$x+y+···$</td>
+<td>浮点数精确求和</td>
+</tr>
+<tr>
+<td>math.ceil(x)</td>
+<td>$ ⌈x⌉$</td>
+<td>向上取整，返回不小于x的最小整数</td>
+</tr>
+<tr>
+<td>math.floor(x)</td>
+<td>$⌊x⌋ $</td>
+<td>向下取整，返回不大于x的最大整数</td>
+</tr>
+<tr>
+<td>math.factorial(x)</td>
+<td>$x!$</td>
+<td>返回x的阶乘，如果x是小数或负数，返回ValueError</td>
+</tr>
+<tr>
+<td>math.gcd(a,b)</td>
+<td></td>
+<td>返回a与b的最大公约数</td>
+</tr>
+<tr>
+<td>math.frexp(x)</td>
+<td>$x=m×2^e$</td>
+<td>返回(m,e)，当x=0，返回(0.0，0)</td>
+</tr>
+<tr>
+<td>math.ldexp(x,i)</td>
+<td>$x×2^i$</td>
+<td>返回⁍运算值，math.frexp(x)函数的反运算</td>
+</tr>
+<tr>
+<td>math.modf(x)</td>
+<td></td>
+<td>返回x的小数和整数部分</td>
+</tr>
+<tr>
+<td>math.trunc(x)</td>
+<td></td>
+<td>返回x的整数部分</td>
+</tr>
+<tr>
+<td>math.copysign(x,y)</td>
+<td>$|x|×|y|/y$</td>
+<td>用数值y的正负号替换数值x的正负号</td>
+</tr>
+<tr>
+<td>math.isclose(a,b)</td>
+<td></td>
+<td>比较a和b的相似性，返回True或False</td>
+</tr>
+<tr>
+<td>math.isfinite(x)</td>
+<td></td>
+<td>当x不是无穷大或NaN,返回True；否则，返回False</td>
+</tr>
+<tr>
+<td>math.isinf(x)</td>
+<td></td>
+<td>当x为正负无穷大，返回True；否则，返回False</td>
+</tr>
+<tr>
+<td>math.isnan(x)</td>
+<td></td>
+<td>当x是NaN，返回True；否则，返回False</td>
+</tr>
+</tbody></table>
+<p>math库的幂对数函数（共8个）</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>数学表示</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>math.pow(x,y)</td>
+<td>$x^y$</td>
+<td>返回x的y次幂</td>
+</tr>
+<tr>
+<td>math.exp(x)</td>
+<td>$e^x$</td>
+<td>返回e的x次幂，e是自然对数</td>
+</tr>
+<tr>
+<td>math.exoml(x)</td>
+<td>$e^x-1$</td>
+<td>返回e的x次幂减1</td>
+</tr>
+<tr>
+<td>math.sqrt(x)</td>
+<td>$\sqrt x$</td>
+<td>返回x的平方根</td>
+</tr>
+<tr>
+<td>math.log(x,[base])</td>
+<td>$log_{base}x$</td>
+<td>返回x的对数值，只输入x时，返回自然对数，即$ln\ x$</td>
+</tr>
+<tr>
+<td>math.loglp(x)</td>
+<td>$ln(1+x)$</td>
+<td>返回$1+x$的自然对数值</td>
+</tr>
+<tr>
+<td>math.log2(x)</td>
+<td>$log_2x$</td>
+<td>返回x的2对数值</td>
+</tr>
+<tr>
+<td>math.log10(x)</td>
+<td>$log_{10}x$</td>
+<td>返回x的10对数值</td>
+</tr>
+</tbody></table>
+<p>math库的三角函数运算函数（共16个）</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>数学表示</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>math.degrees(x)</td>
+<td></td>
+<td>弧度x的弧度值转角度值</td>
+</tr>
+<tr>
+<td>math.redians(x)</td>
+<td></td>
+<td>角度x的角度值转弧度值</td>
+</tr>
+<tr>
+<td>math.hypot(x,y)</td>
+<td>$\sqrt{x^2+y^2}$</td>
+<td>返回(x,y)坐标到原点(0,0)的距离</td>
+</tr>
+<tr>
+<td>math.sin(x)</td>
+<td>$sin\ x$</td>
+<td>返回x的正弦函数值，x是弧度值</td>
+</tr>
+<tr>
+<td>math.cos(x)</td>
+<td>$cos\ x$</td>
+<td>返回x的余弦函数值，x是弧度值</td>
+</tr>
+<tr>
+<td>math.tan(x)</td>
+<td>$tan\ x$</td>
+<td>返回x的正切函数值，x是弧度值</td>
+</tr>
+<tr>
+<td>math.asin(x)</td>
+<td>$arcsin\ x$</td>
+<td>返回x的反正弦函数值，x是弧度值</td>
+</tr>
+<tr>
+<td>math.acos(x)</td>
+<td>$arccos\ x$</td>
+<td>返回x的反余弦函数值，x是弧度值</td>
+</tr>
+<tr>
+<td>math.atan(x)</td>
+<td>$arctan\ x$</td>
+<td>返回x的反正切函数值，x是弧度值</td>
+</tr>
+<tr>
+<td>math.atan2(y,x)</td>
+<td>$arctan\ y/x$</td>
+<td>返回⁍的反正切函数值，x是弧度值</td>
+</tr>
+<tr>
+<td>math.sinh(x)</td>
+<td>$sinh \ x$</td>
+<td>返回x的双曲正弦函数值</td>
+</tr>
+<tr>
+<td>math.cosh(x)</td>
+<td>$cosh\ x$</td>
+<td>返回x的双曲余弦函数值</td>
+</tr>
+<tr>
+<td>math.tanh(x)</td>
+<td>$tanh\ x$</td>
+<td>返回x的双曲正切函数值</td>
+</tr>
+<tr>
+<td>math.asinh(x)</td>
+<td>$arcsinh\ x$</td>
+<td>返回x的反双曲正弦函数值</td>
+</tr>
+<tr>
+<td>math.acosh(x)</td>
+<td>$arccosh\ x$</td>
+<td>返回x的反双曲余弦函数值</td>
+</tr>
+<tr>
+<td>math.atanh(x)</td>
+<td>$arctanh\ x$</td>
+<td>返回x的反双曲正切函数值</td>
+</tr>
+</tbody></table>
+<p>math库的高等特殊函数（共4个）</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>数学表示</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>math.erf(x)</td>
+<td>$\frac{2}{\sqrt{\pi}} \int_0^x e^{-t^2}dt$</td>
+<td>高斯误差函数，应用于概率论、统计学等领域</td>
+</tr>
+<tr>
+<td>math.erfc(x)</td>
+<td>$\frac{2}{\sqrt{\pi}} \int_x^∞ e^{-t^2}dt$</td>
+<td>余补高斯误差函数，math.erfc(x)=1 - math.erf(x)</td>
+</tr>
+<tr>
+<td>math.gamma(x)</td>
+<td>$\int_0^∞x^{t-1}e^{-x}dx$</td>
+<td>伽玛（Gamma）函数，也叫欧拉第二积分函数</td>
+</tr>
+<tr>
+<td>math.lgamma(x)</td>
+<td>$ln(gamma(x))$</td>
+<td>伽玛函数的自然对数</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>7.字符串类型</p>
+<p>①三引号(“‘)，其中可以使用双引号，单引号，甚至换行。</p>
+<p>②input()可以获取用户输入，并且储存为字符串类型，input(string);其中的string可以作为用户输入的提示语句。print()函数则可以直接打印字符串。</p>
+<p>③字符串包括两种序号体系：(1)正向递增序号：0<del>L-1 (2)反向递减序号：-L</del>-1</p>
+<p>④提供区间访问方式：[N:M]表示从N到M(不包含M)的子串</p>
+<p>⑤使用Unicode编码，中文英文字符都算作1个字符</p>
+<p>⑥字符串操作符</p>
+<p>(1)x+y：连接两字符串</p>
+<p>(2)x<em>n或n</em>x：复制n次字符串x</p>
+<p>(3)x in s：若x是s的子串返回true否则返回false</p>
+<p>(4)str[N:M]：返回N~M(不包含M)的子串</p>
+<p>⑦eval()函数返回执行的一个字符串表达式的值，例：n=10 num=eval(”n+5”)，则num=15 </p>
+<p>⑧内置字符串处理函数：</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>len(x)</td>
+<td>返回字符串x的长度，也可返回其他组合数据类型元素个数</td>
+</tr>
+<tr>
+<td>str(x)</td>
+<td>返回任意类型x所对应的字符串类型</td>
+</tr>
+<tr>
+<td>chr(x)</td>
+<td>返回Unicode编码x对应的单字符</td>
+</tr>
+<tr>
+<td>ord(x)</td>
+<td>返回单字符表示的Unicode编码</td>
+</tr>
+<tr>
+<td>hex(x)</td>
+<td>返回整数x对应的十六进制的小写形式字符串</td>
+</tr>
+<tr>
+<td>oct(x)</td>
+<td>返回整数x对应八进制的小写形式字符串</td>
+</tr>
+</tbody></table>
+<p>⑨字符串类的内置字符串处理方法：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>str.lower()</td>
+<td>返回字符串str的副本，全部字符小写</td>
+</tr>
+<tr>
+<td>str.upper()</td>
+<td>返回字符串str的副本，全部字符大写</td>
+</tr>
+<tr>
+<td>str.islower()</td>
+<td>当str所有字符都是小写时，返回True，否则返回False</td>
+</tr>
+<tr>
+<td>str.isprintable</td>
+<td>当str所有字符都是可打印的，返回True，否则返回False</td>
+</tr>
+<tr>
+<td>str.isnumeric()</td>
+<td>当str所有字符都是数字时，返回True，否则返回False</td>
+</tr>
+<tr>
+<td>str.isspace()</td>
+<td>当str所有字符都是空格，返回True，否则返回False</td>
+</tr>
+<tr>
+<td>str.endswith(suffix[,start[,end]])</td>
+<td>str[start:end]以suffix结尾返回True，否则返回False</td>
+</tr>
+<tr>
+<td>str.startswith(prefix[,start[,end]])</td>
+<td>str[start:end]以prefix开始返回True，否则返回False</td>
+</tr>
+<tr>
+<td>str.split(sep=None,maxsplit=-1)</td>
+<td>返回一个列表，由str根据sep被分隔的部分构成</td>
+</tr>
+<tr>
+<td>str.count(sub[,start[,end]])</td>
+<td>返回str[start:end]中sub子串出现的次数</td>
+</tr>
+<tr>
+<td>str.replace(old,new[,count])</td>
+<td>返回字符串str的副本，所有olf字串被替换成new，如果count给出，则前count次old出现被替换</td>
+</tr>
+<tr>
+<td>str.center(width[,fillchar])</td>
+<td>字符串居中函数，详见函数定义</td>
+</tr>
+<tr>
+<td>str.strip([chars])</td>
+<td>返回字符串str的副本，在其左侧和右侧去掉chars中列出的字符串</td>
+</tr>
+<tr>
+<td>str.zfill(width)</td>
+<td>返回字符串str的副本，长度为width，不足部分在左侧添0</td>
+</tr>
+<tr>
+<td>str.format()</td>
+<td>返回字符串str的一种排版格式，之后详细说明</td>
+</tr>
+<tr>
+<td>str.join(iterable)</td>
+<td>返回一个新字符串，由组合数据类型iterable变量的每个元素组成，元素间用str分隔</td>
+</tr>
+</tbody></table>
+<p>⑩字符串格式化方法(format)：</p>
+<p>(1)&lt;模板字符串&gt;.format(str1,str2,…)，其中模板字符串中需要进行修改的部分使用{}(槽)</p>
+<p>例：”{}：计算机{}的CPU占用率为{}%”.format(”2016-12-31”,”PYTHON”,10)</p>
+<blockquote>
+<p>2016-12-31：计算机PYTHON的CPU占用率为10%</p>
+</blockquote>
+<p>(2)槽的内部包含格式控制信息：{&lt;参数序号&gt;:&lt;格式控制标记&gt;}</p>
+<p>(3)格式控制标记包括</p>
+<p>[1]&lt;填充&gt;除了参数外其他的字符采用什么方式，默认空格。例：{0:-}</p>
+<p>[2]&lt;对齐&gt; ：”&lt;”左对齐，”&gt;“右对齐，”^“居中</p>
+<p>[3]&lt;宽度&gt;输出字符的宽度    例：{0:-^30}居中且使用-填充宽度为30</p>
+<p>[4]&lt;,&gt;千分分隔位 例：123,456</p>
+<p>[5]&lt;.精度&gt;对于浮点数：小数部分输出的有效位数；对于字符串：输出的最大长度</p>
+<p>[6]&lt;类型&gt;：”b“整数二进制，”c“整数Unicode，”d“整数十进制，”o“整数八进制，”x“整数小写十六进制，”X“整数大写十六进制；”e“浮点数小写指数形式，”E“浮点数大写指数形式，”f“浮点数标准浮点形式(6位小数)，”%“浮点数百分形式</p>
+<p>8.基本语句</p>
+<p>（1）条件语句</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#格式1</span></span><br><span class="line"><span class="keyword">if</span> Boolean expression:</span><br><span class="line">	block of code</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	block of code</span><br><span class="line"></span><br><span class="line"><span class="comment">#格式2</span></span><br><span class="line"><span class="keyword">if</span> Boolean expression:</span><br><span class="line">	block of code</span><br><span class="line"><span class="keyword">elif</span> Boolean expression:</span><br><span class="line">	block of code</span><br><span class="line">...</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	block of code</span><br></pre></td></tr></table></figure>
+
+<p>（2）输入输出语句</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">变量名 = <span class="built_in">input</span>(<span class="string">&#x27;提示信息&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>()</span><br></pre></td></tr></table></figure>
+
+<p>（3）循环语句</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#while语句</span></span><br><span class="line"><span class="keyword">while</span>(boolean expression):</span><br><span class="line">	block of code</span><br><span class="line"></span><br><span class="line"><span class="comment">#for语句</span></span><br><span class="line"><span class="keyword">for</span> 迭代变量 <span class="keyword">in</span> 序列:</span><br><span class="line">	block of code</span><br></pre></td></tr></table></figure>
+
+<p>（4）杂项</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#break continue语句，用法与其他语言相同，均用于while及for中</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#pass语句#占位语句</span></span><br><span class="line"><span class="comment">#例如：如果定义一个空函数程序会报错，当你没有想好函数的内容是可以用 pass 填充,使程序可以正常运行</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="二、-函数、作用域与抽象"><a href="#二、-函数、作用域与抽象" class="headerlink" title="二、 函数、作用域与抽象"></a>二、 函数、作用域与抽象</h2><p>1.牛顿-拉弗森法求根的近似值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#利用牛顿-拉弗森法寻找平方根</span></span><br><span class="line"><span class="comment">#寻找x，满足x**2-24在epsilon和0之间</span></span><br><span class="line">epsilon = <span class="number">0.01</span></span><br><span class="line">k=<span class="number">24.0</span></span><br><span class="line">guess = k/<span class="number">2.0</span></span><br><span class="line"><span class="keyword">while</span> <span class="built_in">abs</span>(guess*guess-k) &gt;= epsilon:</span><br><span class="line">	guess = guess-(((guess**<span class="number">2</span>)-k)/(<span class="number">2</span>*guess))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Square root of&#x27;</span>,k,<span class="string">&#x27;is about&#x27;</span>,guess)</span><br></pre></td></tr></table></figure>
+
+<p>2.定义函数的方法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">name</span>(<span class="params"><span class="built_in">list</span></span>):</span><br><span class="line">		body</span><br></pre></td></tr></table></figure>
+
+<p>return语句会结束对函数的调用，其值为被调用函数返回的值。</p>
+<p>3.将形参绑定到实参的两种方法：</p>
+<p>(1)使用位置参数，即第一个形参绑定到第一个实参，第二个参数绑定到第二个实参，以此类推。</p>
+<p>(2)关键字参数，即形参根据名称绑定到实参。关键字参数可以在实参列表中以任意顺序出现，但是不可以放在非关键字参数后面。</p>
+<p>否则会报错：</p>
+<blockquote>
+<p>SyntaxError: positional argument follows keyword argument</p>
+</blockquote>
+<p>4.help(…)可以访问函数中的文档字符串，比如help(abs)；文档字符串是”””…..”””三引号之间的文字；使用文档字符串提供函数规范</p>
+<p>5.模块：一个包含Python定义和语句的.py文件。程序可以通过import语句访问一个模块。使用<strong>点标记法</strong>来引用模块中的变量等；使用from M import *会将M中定义的所有对象绑定到当前作用域(此时不可以再用点标记法)。</p>
+<p>6.常用的文件操作：</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>open(fn,’w’)</td>
+<td>fn是一个表示文件名的字符串。创建一个文件用来写入数据，返回文件句柄。</td>
+</tr>
+<tr>
+<td>open(fn,’r’)</td>
+<td>fn是一个表示文件名的字符串。打开一个已有文件读取数据，返回文件句柄。</td>
+</tr>
+<tr>
+<td>open(fn,’a’)</td>
+<td>fn是一个表示文件名的字符串。打开一个已有文件用来追加数据，返回文件句柄。</td>
+</tr>
+<tr>
+<td>fh.read()</td>
+<td>返回一个字符串，其中包含与文件句柄fh相关的文件中的内容。</td>
+</tr>
+<tr>
+<td>fh.readline()</td>
+<td>返回与文件句柄fh相关的文件中的下一行。</td>
+</tr>
+<tr>
+<td>fh.readlines()</td>
+<td>返回一个列表，列表中的每个元素都是与文件句柄fh相关的文件中的一行。</td>
+</tr>
+<tr>
+<td>fh.write(s)</td>
+<td>将字符串s写入与文件句柄fh相关的文件末尾。</td>
+</tr>
+<tr>
+<td>fh.writeLines(S)</td>
+<td>S是个字符串序列。将S中的每个元素作为一个单独的行写入文件句柄fh相关的文件。</td>
+</tr>
+<tr>
+<td>fh.close()</td>
+<td>关闭与文件句柄fh相关的文件。</td>
+</tr>
+</tbody></table>
+<h2 id="三、-结构化类型、可变性与高阶函数"><a href="#三、-结构化类型、可变性与高阶函数" class="headerlink" title="三、 结构化类型、可变性与高阶函数"></a>三、 结构化类型、可变性与高阶函数</h2><h3 id="1-元组tuple-（一些元素的不可变有序序列）"><a href="#1-元组tuple-（一些元素的不可变有序序列）" class="headerlink" title="1.元组tuple   （一些元素的不可变有序序列）"></a>1.元组tuple   （一些元素的不可变有序序列）</h3><p>（1）其中的单个元素可以是任意类型，彼此之间类型也可以不相同</p>
+<p>（2）定义形式：t1 = (1,’two’,3)  用逗号隔开</p>
+<p>（3）定义单元素元组，例如：t = (1,)。一定要加逗号。</p>
+<p>（4）元组甚至可以嵌套，t1=(1,’two’,3)  t2=(t1,3.14)=((1,’two’,3),3.14)</p>
+<p>（5）元组可以进行连接、索引和切片操作，例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">t1 = (<span class="number">1</span>,<span class="string">&#x27;two&#x27;</span>,<span class="number">3</span>)</span><br><span class="line">t2 = (t1,<span class="number">3.25</span>)</span><br><span class="line"><span class="built_in">print</span>(t2)</span><br><span class="line"><span class="built_in">print</span>(t1+t2)<span class="comment">#连接</span></span><br><span class="line"><span class="built_in">print</span>((t1+t2)[<span class="number">3</span>])<span class="comment">#索引</span></span><br><span class="line"><span class="built_in">print</span>((t1+t2)[<span class="number">2</span>:<span class="number">5</span>])<span class="comment">#切片</span></span><br></pre></td></tr></table></figure>
+
+<p>（6）序列与多重赋值：已知一个序列(元组字符串)的长度可方便地提取单个元素；多重赋值，例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x,y=(<span class="number">3</span>,<span class="number">4</span>)<span class="comment">#将x绑定到3，将y绑定到4</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-范围range"><a href="#2-范围range" class="headerlink" title="2.范围range"></a>2.范围range</h3><p>（1）范围不可变，range函数会返回一个range类型的对象</p>
+<p>（2）range函数接受3个整数参数：start、stop和step。最后一个元素是start+i×step，至于与stop的大小关系需要讨论step的正负。</p>
+<h3 id="3-列表list"><a href="#3-列表list" class="headerlink" title="3.列表list"></a>3.列表list</h3><p>（1）使用中括号[]；单元素列表不需要加逗号。</p>
+<p>（2）列表是<strong>可变</strong>的。list类型的对象在创建完成后可以被修改。</p>
+<p>（3）可以使用<strong>id函数</strong>检测两对象是否相等，id会返回一个对象的唯一整数标识符</p>
+<p>（4）append方法可以向列表的末尾添加一个新元素，例：list1.append(’AA’)。使用append将一个列表追加到另一个列表时，会保持原来的结构，即结果是一个包含列表的列表。</p>
+<p>（5）可以使用列表连接操作或extend方法来将一个列表追加到另一个列表，此方法不会保持原来的结构，即结果只是一个列表。而列表连接操作’+‘会创建并返回一个新的列表，而extend和append会改变原有的列表。</p>
+<p>（6）列表相关操作</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>L.append(e)</td>
+<td>将对象e追加到L的末尾</td>
+</tr>
+<tr>
+<td>L.count(e)</td>
+<td>返回e在L中出现的次数</td>
+</tr>
+<tr>
+<td>L.insert(i,e)</td>
+<td>将对象e插入L中索引值为i的位置</td>
+</tr>
+<tr>
+<td>L.extend(L1)</td>
+<td>将L1中的项目追加到L的末尾</td>
+</tr>
+<tr>
+<td>L.remove(e)</td>
+<td>从L中删除第一个出现的e</td>
+</tr>
+<tr>
+<td>L.index(e)</td>
+<td>返回e第一次出现在L中时的索引值。如果e不在L中，则抛出一个异常</td>
+</tr>
+<tr>
+<td>L.pop(i)</td>
+<td>删除并返回L中索引值为i的项目。如果L为空，则抛出一个一场。如果i被省略，则i的默认值为-1，删除并返回L中的最后一个元素。</td>
+</tr>
+<tr>
+<td>L.sort()</td>
+<td>升序排列L中的元素</td>
+</tr>
+<tr>
+<td>L.reverse()</td>
+<td>翻转L中的元素顺序</td>
+</tr>
+</tbody></table>
+<p>（7）克隆</p>
+<p>①切片操作克隆列表。使用for e1 in L1[:]的写法。</p>
+<blockquote>
+<p>newL1 = L1<br>for e1 in newL1:<br>这种写法是错误的，仅仅为现有列表引入了一个新的名称。</p>
+</blockquote>
+<p>②list(L)表达式会返回列表L的一份副本。</p>
+<p>③若待复制的列表包含可变对象，并且需要复制这些可变对象，可以导入标准库模板copy，然后使用函数copy.deepcopy</p>
+<p>（8）列表推导</p>
+<p>列表推导式可以将某种操作应用到序列中的一个值上。会创建一个新的列表，其中的每个元素都是一个序列中的值应用到给定操作后的结果。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">L = [x**<span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">7</span>)]</span><br><span class="line"><span class="built_in">print</span>(L)</span><br><span class="line"><span class="comment">#输出：[1，4，9，16，25，36]</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mixed = [<span class="number">1</span>,<span class="number">2</span>,<span class="string">&#x27;a&#x27;</span>,<span class="number">3</span>,<span class="number">4.0</span>]</span><br><span class="line"><span class="built_in">print</span>([x**<span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> mixed <span class="keyword">if</span> <span class="built_in">type</span>(x)==<span class="built_in">int</span>])</span><br><span class="line"><span class="comment">#type可以获取该元素的类型</span></span><br><span class="line"><span class="comment">#输出：[1,4,9]</span></span><br><span class="line"><span class="comment">#for从句后面可以有一个或多个if语句和for语句，可以应用到for子句产生的值。</span></span><br><span class="line"><span class="comment">#这些附加从句可以修改第一个for从句生成的序列中的值，并产生一个新的序列。</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-函数对象"><a href="#4-函数对象" class="headerlink" title="4.函数对象"></a>4.函数对象</h3><p>（1）type(abs)的值为：&lt;class ‘builtin_function_or_method’&gt;；函数可以出现在表达式中，例如作为赋值语句的右侧项或作为函数的实参；函数也可以是列表中的元素。</p>
+<p>（2）使用函数作为实参可以实现<strong>高阶编程</strong>的编码方式。常与列表结合使用。</p>
+<p>（3）Python内置了高阶函数map，与for循环结合使用。</p>
+<p>最简形式：map(一元函数,有序值的集合)，作用类似range函数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#应用举例</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">map</span>(<span class="built_in">abs</span>,[<span class="number">2</span>,-<span class="number">6</span>,-<span class="number">4</span>]):</span><br><span class="line">	<span class="built_in">print</span>(i)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出：2 6 4</span></span><br></pre></td></tr></table></figure>
+
+<p>更一般的形式：map(具有n个参数的函数，L1,L2,···,Ln)。要求L1-Ln集合的长度相同。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#应用举例</span></span><br><span class="line">L1 = [<span class="number">1</span>,<span class="number">28</span>,<span class="number">36</span>]</span><br><span class="line">L2 = [<span class="number">2</span>,<span class="number">57</span>,<span class="number">9</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">map</span>(<span class="built_in">min</span>,L1,L2):</span><br><span class="line">	<span class="built_in">print</span>(i)</span><br><span class="line"><span class="comment">#输出：1 28 9</span></span><br></pre></td></tr></table></figure>
+
+<p>（4）支持创建<strong>匿名函数</strong>。需要使用关键字lambda</p>
+<p>lambda表达式的一般形式：lambda <sequence of variable names>: <expression></p>
+<p>举例：lambda x,y: x*y 会返回一个函数，这个函数的返回值为两个参数的乘积。</p>
+<p>Lambda表达式经常用作高阶函数的实参。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#应用举例</span></span><br><span class="line">L = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">map</span>(<span class="keyword">lambda</span> x,y: x*y,[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">0</span>]):</span><br><span class="line">	L.append(i)</span><br><span class="line"><span class="built_in">print</span>(L)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出：[1,4,3,1]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-字符串、元组、范围与列表总结"><a href="#5-字符串、元组、范围与列表总结" class="headerlink" title="5.字符串、元组、范围与列表总结"></a>5.字符串、元组、范围与列表总结</h3><ul>
+<li>序列类型的通用操作</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>seq[i]</td>
+<td>返回序列中的第i个元素</td>
+</tr>
+<tr>
+<td>len(sep)</td>
+<td>返回序列长度</td>
+</tr>
+<tr>
+<td>seq1+seq2</td>
+<td>返回两个序列的连接（不适用于range）</td>
+</tr>
+<tr>
+<td>n*seq</td>
+<td>返回一个重复了n次seq的序列</td>
+</tr>
+<tr>
+<td>seq[start:end]</td>
+<td>返回序列的一个切片</td>
+</tr>
+<tr>
+<td>e in seq</td>
+<td>如果序列包含e，则返回True，否则返回False</td>
+</tr>
+<tr>
+<td>e not in seq</td>
+<td>如果序列不包含e，则返回True，否则返回False</td>
+</tr>
+<tr>
+<td>for e in seq</td>
+<td>遍历序列中的元素</td>
+</tr>
+</tbody></table>
+<ul>
+<li>序列类型对比</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>元素类型</th>
+<th>字面量示例</th>
+<th>是否可变</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>str</td>
+<td>字符型</td>
+<td>‘ ‘、‘a、’abc’</td>
+<td>否</td>
+</tr>
+<tr>
+<td>tuple</td>
+<td>任意类型</td>
+<td>()、(3,)、（’abc‘,4）</td>
+<td>否</td>
+</tr>
+<tr>
+<td>range</td>
+<td>整型</td>
+<td>range(10)、range(1,10,2)</td>
+<td>否</td>
+</tr>
+<tr>
+<td>list</td>
+<td>任意类型</td>
+<td>[]、[3]、[’abc’,4]</td>
+<td>是</td>
+</tr>
+</tbody></table>
+<h3 id="6-字典-dict"><a href="#6-字典-dict" class="headerlink" title="6.字典(dict)"></a>6.字典(dict)</h3><p>（1）字典使用<strong>键</strong>对其中的值进行引用，可以将字典看作一个<strong>键/值对</strong>的集合</p>
+<p>（2）字典类型的字面量用<strong>大括号</strong>表示，其中的元素写法是<strong>键加冒号再加上值</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#应用举例</span></span><br><span class="line">monthNumbers = &#123;<span class="string">&#x27;Jan&#x27;</span>:<span class="number">1</span>,<span class="string">&#x27;Feb&#x27;</span>:<span class="number">2</span>,<span class="string">&#x27;Mar&#x27;</span>:<span class="number">3</span>,<span class="string">&#x27;Apr&#x27;</span>:<span class="number">4</span>,<span class="string">&#x27;May&#x27;</span>:<span class="number">5</span>,</span><br><span class="line">								<span class="number">1</span>:<span class="string">&#x27;Jan&#x27;</span>,<span class="number">2</span>:<span class="string">&#x27;Feb&#x27;</span>,<span class="number">3</span>:<span class="string">&#x27;Mar&#x27;</span>,<span class="number">4</span>:<span class="string">&#x27;Apr&#x27;</span>,<span class="number">5</span>:<span class="string">&#x27;May&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;The third month is &#x27;</span>+ monthNumber[<span class="number">3</span>])</span><br><span class="line">dist = monthNumbers[<span class="string">&#x27;Apr&#x27;</span>] - monthNumbers[<span class="string">&#x27;Jan&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Apr and Jan are&#x27;</span>,dist,<span class="string">&#x27;months apart&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出：The third month is Mar</span></span><br><span class="line"><span class="comment">#     Apr and Jan are 3 months apart</span></span><br></pre></td></tr></table></figure>
+
+<p>（3）字典中的项目是无序的，不能通过索引引用。</p>
+<p>（4）和列表相同，字典是可变的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#增加一个项目</span></span><br><span class="line">monthNumbers[<span class="string">&#x27;June&#x27;</span>]=<span class="number">6</span></span><br><span class="line"><span class="comment">#修改一个项目 </span></span><br><span class="line">monthNumbers[<span class="string">&#x27;May&#x27;</span>]=<span class="string">&#x27;V&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>（5）常用的字典操作</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>len(d)</td>
+<td>返回d中项目的数量</td>
+</tr>
+<tr>
+<td>d.keys()</td>
+<td>返回d中所有键的视图</td>
+</tr>
+<tr>
+<td>d.values()</td>
+<td>返回d中所有值的试图</td>
+</tr>
+<tr>
+<td>k in d</td>
+<td>如果k在d中，则返回True</td>
+</tr>
+<tr>
+<td>d[k]</td>
+<td>返回d中键为k的项目</td>
+</tr>
+<tr>
+<td>d.get(k,v)</td>
+<td>如果k在d中，则返回d[k]，否则返回v</td>
+</tr>
+<tr>
+<td>d[k] = v</td>
+<td>在d中将值v与键k关联，如果已经有一个与k关联的值，则替换</td>
+</tr>
+<tr>
+<td>del d[k]</td>
+<td>从d中删除键k</td>
+</tr>
+<tr>
+<td>for k in d</td>
+<td>遍历d中的键</td>
+</tr>
+</tbody></table>
+<h2 id="四、异常"><a href="#四、异常" class="headerlink" title="四、异常"></a>四、异常</h2><ul>
+<li>常见的异常：TypeError、IndexError、NameError、ValueError</li>
+</ul>
+<h3 id="1-处理异常"><a href="#1-处理异常" class="headerlink" title="1.处理异常"></a>1.处理异常</h3><p>（1）程序因为一个异常被抛出而终止时，称为抛出了一个<strong>未处理异常</strong>。但实际上，异常并没有必要导致程序终止，其被抛出时，也可以由程序进行处理。</p>
+<p>（2）处理异常的方式：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#处理异常的语法</span></span><br><span class="line"><span class="comment">#格式1</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	&lt;语句&gt;        <span class="comment">#运行别的代码</span></span><br><span class="line"><span class="keyword">except</span> &lt;异常<span class="number">1</span>&gt;：</span><br><span class="line">	&lt;语句&gt;        <span class="comment">#如果在try部份引发了&#x27;异常1&#x27;异常</span></span><br><span class="line"><span class="keyword">except</span> &lt;异常<span class="number">2</span>&gt;，&lt;数据&gt;:</span><br><span class="line">	&lt;语句&gt;        <span class="comment">#如果引发了&#x27;异常2&#x27;异常，获得附加的数据</span></span><br><span class="line"><span class="keyword">except</span>:<span class="comment">#如果写了这一句，无论抛出何种异常都会进入该代码块</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	&lt;语句&gt;        <span class="comment">#如果没有异常发生</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#格式2</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    正常的操作</span><br><span class="line">   ......................</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    发生异常，执行这块代码</span><br><span class="line">   ......................</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    如果没有异常执行这块代码</span><br><span class="line"></span><br><span class="line"><span class="comment">#格式3</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    正常的操作</span><br><span class="line">   ......................</span><br><span class="line"><span class="keyword">except</span>(Exception1[, Exception2[,...ExceptionN]]):</span><br><span class="line">   发生以上多个异常中的一个，执行这块代码</span><br><span class="line">   ......................</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    如果没有异常执行这块代码、</span><br><span class="line"></span><br><span class="line"><span class="comment">#格式4</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	&lt;语句&gt;</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">	&lt;语句&gt;    <span class="comment">#退出try时总会执行</span></span><br><span class="line"><span class="keyword">raise</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>对于格式1<ul>
+<li>如果当try后的语句执行时发生异常，python就跳回到try并执行第一个匹配该异常的except子句，异常处理完毕，控制流就通过整个try语句（除非在处理异常时又引发新的异常）。</li>
+<li>如果在try后的语句里发生了异常，却没有匹配的except子句，异常将被递交到上层的try，或者到程序的最上层（这样将结束程序，并打印默认的出错信息）。</li>
+<li>如果在try子句执行时没有发生异常，python将执行else语句后的语句（如果有else的话），然后控制流通过整个try语句。</li>
+</ul>
+</li>
+<li>对于格式2<ul>
+<li>不能通过该程序识别出具体的异常信息。因为它捕获所有的异常。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#应用举例</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	successFailureRatio = numSuccesses/NumFailures</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;The success/failure ratio is&#x27;</span>,successFailureRatio)</span><br><span class="line"><span class="keyword">except</span> ZeroDicisionError:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&#x27;No failures,so the success/failure ratio is undefined.&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Now here&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-将异常用作控制流"><a href="#2-将异常用作控制流" class="headerlink" title="2.将异常用作控制流"></a>2.将异常用作控制流</h3><p>raise语句：强制引发一个特定的异常</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">raise</span> 异常名称(参数列表)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-断言"><a href="#3-断言" class="headerlink" title="3.断言"></a>3.断言</h3><p>assert语句：确保程序状态股和预期，确保函数参数具有恰当的类型，确保中间值符合预期，确保函数返回一个可接受的值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#格式1</span></span><br><span class="line"><span class="keyword">assert</span> Boolean expression</span><br><span class="line"></span><br><span class="line"><span class="comment">#格式2</span></span><br><span class="line"><span class="keyword">assert</span> Boolean expression,argument</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>执行assert语句时，先对布尔表达式求值<ul>
+<li>True：向下执行</li>
+<li>False：抛出AssersionError异常</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Computer-science/" rel="tag"># Computer science</a>
+              <a href="/tags/Programming-language/" rel="tag"># Programming language</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/07/11/Java%20Note/" rel="prev" title="Java Note">
+      <i class="fa fa-chevron-left"></i> Java Note
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+<div>
+    
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------ 本文结束,感谢您的阅读！------</div>
+    
+</div>
+
+    
+ </div>
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-Notes"><span class="nav-number">1.</span> <span class="nav-text">Python Notes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">一、基本语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81-%E5%87%BD%E6%95%B0%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E6%8A%BD%E8%B1%A1"><span class="nav-number">1.2.</span> <span class="nav-text">二、 函数、作用域与抽象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81-%E7%BB%93%E6%9E%84%E5%8C%96%E7%B1%BB%E5%9E%8B%E3%80%81%E5%8F%AF%E5%8F%98%E6%80%A7%E4%B8%8E%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0"><span class="nav-number">1.3.</span> <span class="nav-text">三、 结构化类型、可变性与高阶函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%85%83%E7%BB%84tuple-%EF%BC%88%E4%B8%80%E4%BA%9B%E5%85%83%E7%B4%A0%E7%9A%84%E4%B8%8D%E5%8F%AF%E5%8F%98%E6%9C%89%E5%BA%8F%E5%BA%8F%E5%88%97%EF%BC%89"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.元组tuple   （一些元素的不可变有序序列）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E8%8C%83%E5%9B%B4range"><span class="nav-number">1.3.2.</span> <span class="nav-text">2.范围range</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%88%97%E8%A1%A8list"><span class="nav-number">1.3.3.</span> <span class="nav-text">3.列表list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.3.4.</span> <span class="nav-text">4.函数对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%81%E5%85%83%E7%BB%84%E3%80%81%E8%8C%83%E5%9B%B4%E4%B8%8E%E5%88%97%E8%A1%A8%E6%80%BB%E7%BB%93"><span class="nav-number">1.3.5.</span> <span class="nav-text">5.字符串、元组、范围与列表总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E5%AD%97%E5%85%B8-dict"><span class="nav-number">1.3.6.</span> <span class="nav-text">6.字典(dict)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%BC%82%E5%B8%B8"><span class="nav-number">1.4.</span> <span class="nav-text">四、异常</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%A4%84%E7%90%86%E5%BC%82%E5%B8%B8"><span class="nav-number">1.4.1.</span> <span class="nav-text">1.处理异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%B0%86%E5%BC%82%E5%B8%B8%E7%94%A8%E4%BD%9C%E6%8E%A7%E5%88%B6%E6%B5%81"><span class="nav-number">1.4.2.</span> <span class="nav-text">2.将异常用作控制流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%96%AD%E8%A8%80"><span class="nav-number">1.4.3.</span> <span class="nav-text">3.断言</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Wong Mathsion"
+      src="/images/Mathsion.jpg">
+  <p class="site-author-name" itemprop="name">Wong Mathsion</p>
+  <div class="site-description" itemprop="description">坚持为美好的东西而努力，不为失败或得不到而焦虑。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Mathsion2" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Mathsion2" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2646769409@qq.com" title="E-Mail → mailto:2646769409@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/509553744?spm_id_from=333.1007.0.0" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;509553744?spm_id_from&#x3D;333.1007.0.0" rel="noopener" target="_blank"><i class="fa fa-tv-retro fa-fw"></i>bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/turyion" title="zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;turyion" rel="noopener" target="_blank"><i class="fab fa-zhihu fa-fw"></i>zhihu</a>
+      </span>
+  </div>
+
+
+
+      </div>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?type=0&id=7507023813&auto=1&height=430"></iframe>  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wong Mathsion</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 支持
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'tjjIptGL8d9MRj1BVRS0WU4b-gzGzoHsz',
+      appKey     : 'uEDYbnfqOUxjmpngTAqU2maT',
+      placeholder: "欢迎畅所欲言",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+
+    </div>
+</body>
+</html>

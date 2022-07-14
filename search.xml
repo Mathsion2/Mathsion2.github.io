@@ -1380,7 +1380,7 @@
 
 <h2 id="一、基本语法"><a href="#一、基本语法" class="headerlink" title="一、基本语法"></a>一、基本语法</h2><p>1.复数类型表示：虚数部分使用后缀<strong>“j”</strong>或<strong>“J”</strong>，如1+2j。实部和虚部都是浮点类型。分别获取实数部分和虚数部分使用：<strong>z.real</strong>，<strong>z.imag</strong></p>
 <p>2.print函数自带换行功能，如果不需要换行则在实参中添加<strong>end=’’</strong>。</p>
-<p>3.<strong>x//y</strong>表示x/y的整数商，即不大于x/y的最大整数；<strong>x</strong>y**表示x的y次幂，即$x^y$</p>
+<p>3.<strong>x//y</strong>表示x/y的整数商，即不大于x/y的最大整数；<strong>x**y</strong> 表示x的y次幂，即$x^y$ </p>
 <p>4.内置数值运算函数</p>
 <table>
 <thead>
@@ -1417,7 +1417,7 @@
 <p>①abs函数甚至可以计算复数的模长</p>
 <p>②pow(3,pow(3,999))%10000先进行求幂运算再进行取余运算，消耗时间长；而使用pow(3,pow(3,999),10000)在求幂运算的同时取余，消耗时间短，但是起到与前面同样的效果。</p>
 <p>5.内置数字类型转换函数</p>
-<p>①**complex(re[,im]);**生成一个实部为re，虚部为im的复数；re可为整数，浮点数甚至字符串，但im可为整数，浮点数，但不能为字符串。 </p>
+<p>①<strong>complex(re[,im]);</strong> 生成一个实部为re，虚部为im的复数；re可为整数，浮点数甚至字符串，但im可为整数，浮点数，但不能为字符串。 </p>
 <p>②不可以将复数直接通过int()，float()函数转化，需要对其实部和虚部进行转化来间接转化复数。</p>
 <p>6.math库</p>
 <p>①math库不支持复数类型，只支持整数和浮点类型</p>

@@ -23,16 +23,6 @@ I am currently applying for a master's degree or a direct doctorate. If you are 
 
 ---
 
-### Research Interests
-
-- Natural Language Processing
-- Large Language Models
-- Information Retrieval
-- Learning to Rank
-- Intellectual Property Information Services
-
----
-
 ### 💻 Internships
 - *2022.05 - now*, [DUTIR](https://ir.dlut.edu.cn/), Dalian, China.
 

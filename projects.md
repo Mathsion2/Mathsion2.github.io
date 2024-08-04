@@ -12,7 +12,7 @@ title: Projects & Researches
 - Agents based on LLMs
 
 ### Papers Reading
-[Papers Repo]()
+[Papers List Repo]()
 
 ---
 
